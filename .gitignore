@@ -1,0 +1,8 @@
+# Processos de clientes (LGPD) — nunca versionar
+casos/
+saida/
+*.pdf
+
+__pycache__/
+.pytest_cache/
+.venv/

@@ -1,0 +1,22 @@
+# Temas suspensos ou em mudança (pesquisa, seção 10).
+# Antes de emitir o parecer, o sistema lista os temas que tocam o caso. Cada item deve ser
+# conferido em fonte oficial pelo advogado — `conferido_em` registra a última conferência.
+
+versao: "2026-10-20"
+
+temas:
+  - id: pejotizacao_stf
+    pedidos: [vinculo_emprego]
+    teses_defesa: [pejotizacao, autonomo]
+    alerta: "Suspensão nacional de processos sobre pejotização determinada pelo STF em 2025 — conferir status antes da audiência."
+    conferido_em: null
+  - id: nr1_psicossocial
+    pedidos: [risco_psicossocial, assedio_moral, dano_moral]
+    teses_defesa: []
+    alerta: "Discussões sobre NR-1 (riscos psicossociais) — conferir eventual suspensão de ações no STF."
+    conferido_em: null
+  - id: correcao_juros
+    pedidos: ["*"]
+    teses_defesa: []
+    alerta: "Regime de correção e juros (ADC 58/59 e Lei 14.905/2024) — conferir parâmetros vigentes antes de qualquer cálculo."
+    conferido_em: null

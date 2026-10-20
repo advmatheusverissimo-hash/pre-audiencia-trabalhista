@@ -1,0 +1,106 @@
+# Modelos do kit de instrução 360º (pesquisa, seção 7.5).
+# Perguntas-base por pedido; os subagentes podem acrescentar perguntas específicas do caso,
+# mas estas são o esqueleto fixo, revisado pelo advogado.
+
+versao: "2026-10-20"
+
+limite_testemunhas:
+  ordinario: {quantidade: 3, fundamento: "Art. 821, CLT"}
+  sumarissimo: {quantidade: 2, fundamento: "Art. 852-H, §2º, CLT"}
+
+preposto:
+  lembrete: >-
+    Desconhecimento dos fatos ou ausência do preposto gera confissão ficta (Súmula 74, TST);
+    o preposto não precisa ser empregado (art. 843, §3º, CLT).
+
+perguntas:
+  horas_extras:
+    preposto:
+      - "Qual era o horário de entrada e saída do reclamante?"
+      - "Quem controlava a jornada no setor?"
+      - "O reclamante batia o ponto e continuava trabalhando?"
+      - "Havia ordem para não registrar horas além do contratual?"
+    testemunha_propria:
+      - "Em que período e setor o(a) senhor(a) trabalhou com o reclamante?"
+      - "Descreva um dia normal de trabalho, do início ao fim."
+      - "Como era registrado o horário? O registro correspondia ao horário real?"
+    testemunha_adversa:
+      - "O(a) senhor(a) trabalhava no mesmo turno do reclamante? (sim/não)"
+      - "O(a) senhor(a) chegava antes ou depois do reclamante? (um fato por vez)"
+      - "O(a) senhor(a) confirma o horário registrado no documento de ID ___? (confronto)"
+  vinculo_emprego:
+    preposto:
+      - "Quem definia os horários do reclamante?"
+      - "O reclamante podia mandar outra pessoa no lugar dele?"
+      - "A quem o reclamante se reportava?"
+    testemunha_propria:
+      - "Como o(a) senhor(a) conheceu o trabalho do reclamante?"
+      - "Descreva como o reclamante recebia as tarefas."
+    testemunha_adversa:
+      - "O reclamante tinha horário fixo? (sim/não)"
+      - "O reclamante recebia ordens de algum empregado da reclamada? (sim/não)"
+  verbas_rescisorias:
+    preposto:
+      - "Como terminou o contrato do reclamante?"
+      - "A empresa convocou o reclamante a retornar? Por qual meio?"
+    testemunha_propria:
+      - "O(a) senhor(a) sabe como terminou o contrato do reclamante? Como soube?"
+    testemunha_adversa:
+      - "O(a) senhor(a) presenciou o pedido de demissão? (sim/não)"
+  equiparacao_salarial:
+    preposto:
+      - "Quais eram as atividades do reclamante e do paradigma?"
+      - "Ambos trabalhavam no mesmo estabelecimento?"
+    testemunha_propria:
+      - "Descreva as tarefas do reclamante e do paradigma."
+    testemunha_adversa:
+      - "O paradigma fazia alguma tarefa que o reclamante não fazia? Qual? (um fato por vez)"
+  dano_moral:
+    preposto:
+      - "A empresa recebeu reclamação sobre o fato narrado na inicial?"
+    testemunha_propria:
+      - "O(a) senhor(a) presenciou o fato? Quando, onde, quem estava?"
+      - "Quantas vezes isso aconteceu? Quem mais viu?"
+    testemunha_adversa:
+      - "O(a) senhor(a) estava presente no dia ___? (sim/não)"
+  assedio_moral:
+    preposto:
+      - "Quem era o superior direto do reclamante?"
+      - "A empresa tem canal de denúncia? Houve registro envolvendo o reclamante?"
+    testemunha_propria:
+      - "Como o superior tratava o reclamante? Dê exemplos, com data e local aproximados."
+      - "Isso se repetia? Com que frequência? Quem mais presenciava?"
+    testemunha_adversa:
+      - "O(a) senhor(a) trabalhava diretamente com o superior ___? (sim/não)"
+
+contradita:
+  gatilhos:
+    - "Parentesco até o 3º grau (art. 829, CLT; art. 447, §2º, CPC)"
+    - "Amizade íntima ou inimizade capital (art. 829, CLT; art. 447, §3º, CPC)"
+    - "Interesse no litígio (art. 447, §3º, II, CPC)"
+    - "Cargo de gestão ou representação da reclamada (atua como longa manus do empregador)"
+  perguntas_qualificacao:
+    - "Qual o seu cargo atual na reclamada? Tem subordinados? Pode admitir ou demitir?"
+    - "O(a) senhor(a) frequenta a casa de alguma das partes? Mantém contato fora do trabalho?"
+    - "Tem algum processo contra ou a favor de alguma das partes?"
+  resposta_sumula_357: >-
+    Se a reclamada contraditar a nossa testemunha por litigar contra a mesma empresa:
+    "Não torna suspeita a testemunha o simples fato de estar litigando ou de ter litigado
+    contra o mesmo empregador (Súmula 357, TST). Requer o indeferimento da contradita e,
+    se acolhida, o registro do protesto em ata."
+
+protestos:
+  - id: indeferimento_pergunta
+    quando: "Juiz indefere pergunta à parte ou testemunha"
+    texto: "Requer o registro em ata da pergunta indeferida — \"___\" — e o protesto por cerceamento de defesa, para fins do art. 795 da CLT."
+  - id: indeferimento_testemunha
+    quando: "Juiz indefere oitiva de testemunha ou acolhe contradita"
+    texto: "Protesta pelo indeferimento da oitiva da testemunha ___, que seria ouvida sobre ___, por cerceamento de defesa (art. 795, CLT)."
+  - id: indeferimento_prova
+    quando: "Juiz indefere perícia, exibição de documento ou outra prova"
+    texto: "Protesta pelo indeferimento da prova ___, essencial à demonstração de ___, por cerceamento de defesa (art. 795, CLT)."
+  - id: encerramento_instrucao
+    quando: "Instrução encerrada com prova pendente"
+    texto: "Consigna o protesto pelo encerramento da instrução sem a produção da prova ___, requerida em ___ (ID ___)."
+
+lembrete_protestos: "Arguir na primeira oportunidade em que couber falar nos autos (art. 795, CLT), sob pena de preclusão."

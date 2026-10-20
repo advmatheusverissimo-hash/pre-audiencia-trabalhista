@@ -1,0 +1,33 @@
+{
+  "lado": "reclamante",
+  "processo": {
+    "numero": "0000000-00.2026.5.02.0000",
+    "vara": "Vara do Trabalho fictícia",
+    "rito": "ordinario",
+    "data_ajuizamento": "2026-03-10",
+    "data_audiencia": "2026-11-18",
+    "reclamada": {"nome": "Empresa Fictícia Ltda.", "numero_empregados": 150}
+  },
+  "contrato": {
+    "admissao": "2019-02-01",
+    "saida": "2025-12-15",
+    "aviso_previo_dias": 48,
+    "funcao": "Auxiliar de logística",
+    "salario": 2800.0,
+    "jornada_contratual": "08h às 17h, seg. a sex.",
+    "ruptura_alegada_reclamada": "pedido_demissao"
+  },
+  "provas": {"controles_ponto": "britanicos"},
+  "pedidos": [
+    {"id": "P1", "tipo": "horas_extras", "descricao": "Horas extras além da 8ª diária", "valor": 42000.0,
+     "periodo": {"inicio": "2019-02-01", "fim": "2025-12-15"}, "fonte": "ID a1b2c3 fl. 12",
+     "defesa": {"origem": "contestacao", "tese": "controles_ponto_validos", "documentos": ["Cartões de ponto"], "fonte": "ID d4e5f6"}},
+    {"id": "P2", "tipo": "verbas_rescisorias", "descricao": "Reversão do pedido de demissão", "valor": 15000.0,
+     "defesa": {"origem": "contestacao", "tese": "pedido_demissao"}},
+    {"id": "P3", "tipo": "fgts", "descricao": "Diferenças de FGTS", "valor": 6000.0},
+    {"id": "P4", "tipo": "insalubridade", "descricao": "Adicional de insalubridade grau médio", "valor": 18000.0,
+     "defesa": {"origem": "prevista", "tese": "epi_fornecido"}},
+    {"id": "P5", "tipo": "assedio_moral", "descricao": "Indenização por assédio moral", "valor": 20000.0,
+     "defesa": {"origem": "prevista", "tese": "ausencia_prova_fato"}}
+  ]
+}

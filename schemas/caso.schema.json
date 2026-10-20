@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "caso.schema.json",
+  "title": "Caso pré-audiência (saída do M2 — extração)",
+  "type": "object",
+  "required": ["processo", "contrato", "pedidos"],
+  "additionalProperties": false,
+  "properties": {
+    "lado": {"enum": ["reclamante", "reclamada"], "default": "reclamante"},
+    "processo": {
+      "type": "object",
+      "required": ["numero", "rito", "data_ajuizamento", "data_audiencia"],
+      "additionalProperties": false,
+      "properties": {
+        "numero": {"type": "string", "minLength": 1},
+        "vara": {"type": "string"},
+        "juiz": {"type": "string"},
+        "rito": {"enum": ["ordinario", "sumarissimo"]},
+        "data_ajuizamento": {"type": "string", "format": "date"},
+        "data_audiencia": {"type": "string", "format": "date"},
+        "reclamada": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "nome": {"type": "string"},
+            "numero_empregados": {"type": ["integer", "null"], "minimum": 0}
+          }
+        }
+      }
+    },
+    "contrato": {
+      "type": "object",
+      "required": ["admissao"],
+      "additionalProperties": false,
+      "properties": {
+        "admissao": {"type": "string", "format": "date"},
+        "saida": {"type": ["string", "null"], "format": "date"},
+        "aviso_previo_dias": {"type": "integer", "minimum": 0, "maximum": 90, "default": 0},
+        "funcao": {"type": "string"},
+        "salario": {"type": "number", "minimum": 0},
+        "jornada_contratual": {"type": "string"},
+        "ruptura_alegada_reclamada": {
+          "enum": ["dispensa_sem_justa_causa", "justa_causa", "pedido_demissao", "abandono", "nega_prestacao", "nao_informada"],
+          "default": "nao_informada"
+        }
+      }
+    },
+    "provas": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "controles_ponto": {"enum": ["ausentes", "britanicos", "variaveis", "nao_informado"], "default": "nao_informado"}
+      }
+    },
+    "pedidos": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "tipo", "descricao"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "tipo": {"type": "string", "minLength": 1},
+          "descricao": {"type": "string"},
+          "valor": {"type": ["number", "null"], "minimum": 0},
+          "periodo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "inicio": {"type": "string", "format": "date"},
+              "fim": {"type": "string", "format": "date"}
+            }
+          },
+          "fonte": {"type": "string", "description": "ID/folha do PJe de onde o pedido foi extraído"},
+          "defesa": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "origem": {"enum": ["contestacao", "prevista"]},
+              "tese": {"type": "string"},
+              "documentos": {"type": "array", "items": {"type": "string"}},
+              "fonte": {"type": "string"}
+            }
+          }
+        }
+      }
+    }
+  }
+}

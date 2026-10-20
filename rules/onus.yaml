@@ -1,0 +1,162 @@
+# Base de regras de ônus da prova por pedido (pesquisa, seção 7.3).
+#
+# Mantida pelo advogado. O sistema NUNCA cria regra de ônus fora deste arquivo:
+# pedido sem regra aqui sai no parecer como "sem regra — advogado define".
+#
+# Como funciona a escolha da regra:
+#   - cada pedido tem um `padrao` e uma lista de `variantes`;
+#   - cada variante tem `quando` (condições sobre o contexto do caso);
+#   - a primeira variante cujas condições batem TODAS vence; se nenhuma bater, vale o `padrao`;
+#   - condição com lista aceita qualquer um dos valores.
+#
+# Chaves de contexto disponíveis em `quando`:
+#   controles_ponto               ausentes | britanicos | variaveis | nao_informado
+#   reclamada_mais_de_20          true | false   (art. 74, §2º, CLT)
+#   tese_defesa                   chave de rules/teses-defesa.yaml (ou nao_informada)
+#   ruptura_alegada_reclamada     dispensa_sem_justa_causa | justa_causa | pedido_demissao | abandono | nega_prestacao | nao_informada
+#
+# `onus`: reclamante | reclamada | pericia
+# `meio_prova`: documental | oral | pericial
+
+versao: "2026-10-20"
+revisado_por: "pendente — Dr. Matheus Verissimo"
+
+regra_geral:
+  fundamento: "Art. 818, I e II, CLT"
+  texto: >-
+    Reclamante prova o fato constitutivo; reclamada, o fato impeditivo, modificativo ou
+    extintivo. O §1º do art. 818 permite a distribuição dinâmica quando a prova estiver
+    com a empresa.
+  efeito: "Pedir distribuição diversa antes da instrução quando a prova estiver com a empresa."
+
+pedidos:
+  horas_extras:
+    rotulo: "Horas extras / jornada"
+    padrao:
+      onus: reclamante
+      fundamento: "Art. 818, I, CLT"
+      meio_prova: [documental, oral]
+      efeito: "Reclamante prova a jornada alegada; preparar testemunha que conviveu no mesmo horário e setor."
+    variantes:
+      - quando: {tese_defesa: cargo_confianca}
+        onus: reclamada
+        fundamento: "Art. 62, II, CLT c/c art. 818, II, CLT — fato impeditivo"
+        meio_prova: [documental, oral]
+        efeito: "Perguntas ao preposto sobre poderes reais de gestão, subordinados, assinatura e padrão salarial (gratificação de 40%)."
+      - quando: {controles_ponto: ausentes, reclamada_mais_de_20: true}
+        onus: reclamada
+        fundamento: "Súmula 338, I, TST; art. 74, §2º, CLT"
+        meio_prova: [documental]
+        efeito: "Não gastar testemunha para provar jornada — explorar a presunção relativa da jornada da inicial e requerer a juntada com a advertência do art. 400 do CPC."
+      - quando: {controles_ponto: britanicos}
+        onus: reclamada
+        fundamento: "Súmula 338, III, TST"
+        meio_prova: [documental, oral]
+        efeito: "Registros invariáveis são inválidos como prova; ônus volta à reclamada. Apontar na réplica e em audiência os IDs dos cartões britânicos."
+      - quando: {controles_ponto: variaveis}
+        onus: reclamante
+        fundamento: "Súmula 338, II, TST; art. 818, I, CLT"
+        meio_prova: [oral]
+        efeito: "Testemunha precisa desconstituir os cartões: horário real, ordem para bater o ponto e voltar ao trabalho, quem controlava."
+
+  verbas_rescisorias:
+    rotulo: "Término do contrato / verbas rescisórias"
+    padrao:
+      onus: reclamada
+      fundamento: "Art. 818, II, CLT; art. 477, CLT — pagamento é fato extintivo"
+      meio_prova: [documental]
+      efeito: "Pagamento se prova por recibo/TRCT e comprovante bancário; exigir o comprovante."
+    variantes:
+      - quando: {ruptura_alegada_reclamada: [abandono, pedido_demissao, nega_prestacao]}
+        onus: reclamada
+        fundamento: "Súmula 212, TST — princípio da continuidade"
+        meio_prova: [documental, oral]
+        efeito: "Abandono de emprego e pedido de demissão são prova da reclamada; exigir convocações formais e o pedido escrito."
+      - quando: {ruptura_alegada_reclamada: justa_causa}
+        onus: reclamada
+        fundamento: "Art. 818, II, CLT; art. 482, CLT"
+        meio_prova: [documental, oral]
+        efeito: "Reclamada prova falta grave, imediatidade e proporcionalidade; explorar ausência de gradação de penas."
+
+  vinculo_emprego:
+    rotulo: "Vínculo de emprego"
+    padrao:
+      onus: reclamante
+      fundamento: "Art. 818, I, CLT"
+      meio_prova: [documental, oral]
+      efeito: "Ler a contestação para ver qual das duas teses veio (nega a prestação ou admite sob outra natureza)."
+    variantes:
+      - quando: {tese_defesa: nega_prestacao}
+        onus: reclamante
+        fundamento: "Art. 818, I, CLT"
+        meio_prova: [documental, oral]
+        efeito: "Provar a prestação de serviço em si: mensagens, crachá, fotos, testemunha que via o trabalho."
+      - quando: {tese_defesa: [autonomo, pejotizacao]}
+        onus: reclamada
+        fundamento: "Art. 818, II, CLT — admitida a prestação, fato impeditivo é da reclamada"
+        meio_prova: [documental, oral]
+        efeito: "Reclamada prova a autonomia; perguntas fechadas sobre subordinação, horário, exclusividade, quem dava ordens."
+
+  equiparacao_salarial:
+    rotulo: "Equiparação salarial"
+    padrao:
+      onus: reclamante
+      fundamento: "Art. 461, CLT; Súmula 6, VIII, TST"
+      meio_prova: [documental, oral]
+      efeito: "Reclamante prova a identidade de função; empresa prova diferença de perfeição técnica, tempo na função, quadro de carreira."
+
+  vale_transporte:
+    rotulo: "Vale-transporte"
+    padrao:
+      onus: reclamada
+      fundamento: "Súmula 460, TST"
+      meio_prova: [documental]
+      efeito: "Em regra dispensa prova oral do reclamante; empresa prova que o empregado não preencheu os requisitos ou não quis."
+
+  fgts:
+    rotulo: "FGTS (diferenças / recolhimento)"
+    padrao:
+      onus: reclamada
+      fundamento: "Súmula 461, TST"
+      meio_prova: [documental]
+      efeito: "Em regra dispensa prova oral do reclamante; exigir extrato analítico e guias."
+
+  insalubridade:
+    rotulo: "Adicional de insalubridade"
+    padrao:
+      onus: pericia
+      fundamento: "Art. 195, CLT — perícia obrigatória"
+      meio_prova: [pericial]
+      efeito: "Instrução é técnica: quesitos e assistente técnico, não testemunha. Conferir ficha de EPI com CA."
+
+  periculosidade:
+    rotulo: "Adicional de periculosidade"
+    padrao:
+      onus: pericia
+      fundamento: "Art. 195, CLT — perícia obrigatória"
+      meio_prova: [pericial]
+      efeito: "Instrução é técnica: quesitos e assistente técnico, não testemunha."
+
+  dano_moral:
+    rotulo: "Dano moral"
+    padrao:
+      onus: reclamante
+      fundamento: "Art. 818, I, CLT — fato constitutivo"
+      meio_prova: [oral, documental]
+      efeito: "Testemunha presencial é essencial; preparar perguntas de contexto (quem, quando, onde, quantas vezes, quem mais viu)."
+
+  assedio_moral:
+    rotulo: "Assédio moral"
+    padrao:
+      onus: reclamante
+      fundamento: "Art. 818, I, CLT — fato constitutivo"
+      meio_prova: [oral, documental]
+      efeito: "Testemunha presencial é essencial; reiteração e conduta do superior são o núcleo das perguntas."
+
+  risco_psicossocial:
+    rotulo: "Risco psicossocial (NR-1)"
+    padrao:
+      onus: reclamada
+      fundamento: "NR-1 (GRO/PGR); art. 400, CPC"
+      meio_prova: [documental, pericial]
+      efeito: "Requerer exibição do PGR/inventário de riscos com a advertência do art. 400 do CPC."
