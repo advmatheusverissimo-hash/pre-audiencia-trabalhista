@@ -1,0 +1,174 @@
+# Base de jurisprudência consolidada usada nos pareceres (TST e TRT-2).
+# Regra do projeto: nenhuma súmula/OJ entra no parecer sem conferência em fonte oficial.
+# `situacao`: a_conferir | vigente | alterada | cancelada.  `texto` só com transcrição da fonte oficial.
+# Fontes oficiais (download manual — os sites bloqueiam acesso automatizado e isso não é contornado):
+#   TST: https://www.tst.jus.br/sumulas  ·  Livro de Súmulas, OJs e PNs (PDF) na aba Jurisprudência
+#   TRT-2: https://ww2.trt2.jus.br/jurisprudencia/jurisprudencia/trt2-jurisprudencia-consolidada/sumulas
+#          .../teses-juridicas-prevalecentes
+
+versao: "2026-10-21"
+revisado_por: "pendente — Dr. Matheus Verissimo"
+
+itens:
+  - chave: "TST-SUM-6"
+    tribunal: TST
+    tipo: sumula
+    numero: 6
+    orgao: ""
+    situacao: a_conferir
+    texto: null
+    fonte: null
+    conferido_em: null
+  - chave: "TST-SUM-60"
+    tribunal: TST
+    tipo: sumula
+    numero: 60
+    orgao: ""
+    situacao: a_conferir
+    texto: null
+    fonte: null
+    conferido_em: null
+  - chave: "TST-SUM-74"
+    tribunal: TST
+    tipo: sumula
+    numero: 74
+    orgao: ""
+    situacao: a_conferir
+    texto: null
+    fonte: null
+    conferido_em: null
+  - chave: "TST-SUM-85"
+    tribunal: TST
+    tipo: sumula
+    numero: 85
+    orgao: ""
+    situacao: a_conferir
+    texto: null
+    fonte: null
+    conferido_em: null
+  - chave: "TST-SUM-146"
+    tribunal: TST
+    tipo: sumula
+    numero: 146
+    orgao: ""
+    situacao: a_conferir
+    texto: null
+    fonte: null
+    conferido_em: null
+  - chave: "TST-SUM-212"
+    tribunal: TST
+    tipo: sumula
+    numero: 212
+    orgao: ""
+    situacao: a_conferir
+    texto: null
+    fonte: null
+    conferido_em: null
+  - chave: "TST-SUM-244"
+    tribunal: TST
+    tipo: sumula
+    numero: 244
+    orgao: ""
+    situacao: a_conferir
+    texto: null
+    fonte: null
+    conferido_em: null
+  - chave: "TST-SUM-268"
+    tribunal: TST
+    tipo: sumula
+    numero: 268
+    orgao: ""
+    situacao: a_conferir
+    texto: null
+    fonte: null
+    conferido_em: null
+  - chave: "TST-SUM-308"
+    tribunal: TST
+    tipo: sumula
+    numero: 308
+    orgao: ""
+    situacao: a_conferir
+    texto: null
+    fonte: null
+    conferido_em: null
+  - chave: "TST-SUM-338"
+    tribunal: TST
+    tipo: sumula
+    numero: 338
+    orgao: ""
+    situacao: a_conferir
+    texto: null
+    fonte: null
+    conferido_em: null
+  - chave: "TST-SUM-357"
+    tribunal: TST
+    tipo: sumula
+    numero: 357
+    orgao: ""
+    situacao: a_conferir
+    texto: null
+    fonte: null
+    conferido_em: null
+  - chave: "TST-SUM-378"
+    tribunal: TST
+    tipo: sumula
+    numero: 378
+    orgao: ""
+    situacao: a_conferir
+    texto: null
+    fonte: null
+    conferido_em: null
+  - chave: "TST-SUM-389"
+    tribunal: TST
+    tipo: sumula
+    numero: 389
+    orgao: ""
+    situacao: a_conferir
+    texto: null
+    fonte: null
+    conferido_em: null
+  - chave: "TST-SUM-460"
+    tribunal: TST
+    tipo: sumula
+    numero: 460
+    orgao: ""
+    situacao: a_conferir
+    texto: null
+    fonte: null
+    conferido_em: null
+  - chave: "TST-SUM-461"
+    tribunal: TST
+    tipo: sumula
+    numero: 461
+    orgao: ""
+    situacao: a_conferir
+    texto: null
+    fonte: null
+    conferido_em: null
+  - chave: "TST-OJ-SDI1-83"
+    tribunal: TST
+    tipo: oj
+    numero: 83
+    orgao: "SDI-1"
+    situacao: a_conferir
+    texto: null
+    fonte: null
+    conferido_em: null
+  - chave: "TST-OJ-SDI1-125"
+    tribunal: TST
+    tipo: oj
+    numero: 125
+    orgao: "SDI-1"
+    situacao: a_conferir
+    texto: null
+    fonte: null
+    conferido_em: null
+  - chave: "TST-OJ-SDI1-355"
+    tribunal: TST
+    tipo: oj
+    numero: 355
+    orgao: "SDI-1"
+    situacao: a_conferir
+    texto: null
+    fonte: null
+    conferido_em: null
