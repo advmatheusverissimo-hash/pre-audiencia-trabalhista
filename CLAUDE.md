@@ -29,3 +29,9 @@
    abertura), calibrados com 30–50 processos encerrados.
 3. Fase 3: preditor de defesa Camadas B e C (provedor por CNPJ) e DataJud.
 4. Fase 4: espelho da reclamada, M9 pós-audiência, painel de carteira.
+
+Pedido do advogado em 21/10/2026, a implementar depois (um módulo por momento processual):
+- Antes e depois da instrução (pós-audiência, razões finais).
+- Sentença: espaço para a sentença, custas e depósito recursal a recolher.
+- Fase recursal: recurso ordinário, recurso de revista, agravo de petição.
+- Execução: liquidação, cálculos, penhora, embargos.

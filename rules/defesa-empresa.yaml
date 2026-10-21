@@ -1,0 +1,143 @@
+# Defesa da reclamada: estrutura da contestação, lembretes de prazo e obrigações da empresa.
+# Usado no "Relatório para a empresa" e na estratégia de defesa a partir da inicial.
+#
+# Mantido pelo advogado. Cada item cita a base legal; o sistema só lista o que está aqui
+# (nada é inventado no código). Item que não se aplica ao caso, o advogado descarta.
+
+versao: "2026-10-21"
+revisado_por: "pendente — Dr. Matheus Verissimo"
+
+estrutura_contestacao:
+  - secao: "Antes da contestação"
+    itens:
+      - titulo: "Exceção de incompetência territorial (peça própria)"
+        quando: "Vara de local diverso do art. 651. Prazo de 5 dias da notificação; suspende o processo e a audiência."
+        base: "Arts. 799 e 800, CLT"
+  - secao: "Preliminares"
+    itens:
+      - titulo: "Nulidade da citação"
+        quando: "Notificação inválida ou para pessoa errada."
+        base: "Art. 337, I, CPC"
+      - titulo: "Inépcia da inicial"
+        quando: "Pedido sem valor liquidado, sem causa de pedir ou incompatível com outro."
+        base: "Art. 840, §§1º e 3º, CLT; art. 330, §1º, CPC"
+      - titulo: "Ilegitimidade passiva / responsabilidade de terceiros"
+        quando: "Empresa que não foi empregadora, grupo econômico ou terceirização mal apontados."
+        base: "Art. 337, XI, CPC; art. 2º, §§2º e 3º, CLT"
+      - titulo: "Incompetência"
+        quando: "Matéria ou local fora da competência da vara."
+        base: "Art. 651, CLT; art. 114, CF"
+      - titulo: "Litispendência ou coisa julgada"
+        quando: "Mesmo pedido em outra ação, em curso ou já julgada."
+        base: "Art. 337, VI e VII, CPC"
+      - titulo: "Impugnação ao valor da causa"
+        quando: "Valor que não corresponde à soma dos pedidos. Alegar em preliminar, sob pena de preclusão."
+        base: "Art. 293, CPC"
+      - titulo: "Impugnação à justiça gratuita"
+        quando: "Salário acima de 40% do teto do RGPS ou prova de capacidade financeira."
+        base: "Art. 790, §§3º e 4º, CLT"
+  - secao: "Prejudiciais de mérito"
+    itens:
+      - titulo: "Prescrição bienal"
+        quando: "Ação ajuizada mais de dois anos após o fim do contrato (aviso projetado)."
+        base: "Art. 7º, XXIX, CF; art. 11, CLT"
+      - titulo: "Prescrição quinquenal"
+        quando: "Parcelas anteriores aos cinco anos do ajuizamento."
+        base: "Art. 7º, XXIX, CF; art. 11, CLT"
+      - titulo: "Prescrição total"
+        quando: "Prestações sucessivas por alteração ou descumprimento do pactuado, salvo direito assegurado em lei."
+        base: "Art. 11, §2º, CLT"
+  - secao: "Mérito"
+    itens:
+      - titulo: "Impugnação específica de cada pedido"
+        quando: "Sempre: fato não impugnado presume-se verdadeiro."
+        base: "Art. 341, CPC; art. 847, CLT"
+      - titulo: "Fato impeditivo, modificativo ou extintivo com prova"
+        quando: "Quando a tese da empresa atrai o ônus (pagamento, justa causa, cargo de confiança...)."
+        base: "Art. 818, II, CLT"
+  - secao: "Pedidos subsidiários"
+    itens:
+      - titulo: "Compensação e dedução do que foi pago sob o mesmo título"
+        quando: "Sempre que houver pagamento da mesma verba (ex.: verbas rescisórias do TRCT). Só pode ser arguida na defesa."
+        base: "Art. 767, CLT"
+      - titulo: "Limitação da condenação aos valores da inicial"
+        quando: "Requerer de forma subsidiária. O TST trata os valores como estimativa (IN 41/2018, art. 12, §2º); tema afetado como IRR — Tema 35: conferir a tese."
+        base: "Art. 840, §1º, CLT"
+      - titulo: "Critérios de juros e correção monetária"
+        quando: "Sempre. Fase pré-judicial IPCA-E + juros; do ajuizamento até 29/08/2024, Selic; a partir de 30/08/2024, IPCA + juros (Selic − IPCA)."
+        base: "ADC 58 e 59, STF; Lei 14.905/2024; SDI-1, E-ED-RR-713-03.2010.5.04.0029 — conferir"
+      - titulo: "Contribuições previdenciárias e imposto de renda"
+        quando: "Sempre: discriminar a natureza das verbas e reter a cota do empregado e o IR."
+        base: "Art. 832, §3º, e art. 879, §1º-A, CLT"
+      - titulo: "Honorários de sucumbência"
+        quando: "Pedir sobre os pedidos improcedentes (5% a 15%). Beneficiário da gratuidade: exigibilidade suspensa por 2 anos."
+        base: "Art. 791-A, CLT; ADI 5766, STF"
+      - titulo: "Pagamento da parte incontroversa na audiência"
+        quando: "Verbas rescisórias incontroversas: pagar na primeira audiência evita a multa de 50%."
+        base: "Art. 467, CLT"
+  - secao: "Requerimentos e provas"
+    itens:
+      - titulo: "Provas a produzir"
+        quando: "Depoimento pessoal do reclamante, testemunhas (comparecem independentemente de intimação), perícia, documentos."
+        base: "Arts. 818, 821 e 845, CLT"
+
+lembretes:
+  - "A defesa escrita é protocolada no PJe até a audiência (art. 847, parágrafo único, CLT); os documentos vão com ela."
+  - "Ausência da reclamada na audiência gera revelia e confissão quanto à matéria de fato (art. 844, CLT)."
+  - "O preposto precisa conhecer os fatos (art. 843, §1º) e não precisa ser empregado (art. 843, §3º, CLT). Levar carta de preposição."
+  - "Se a empresa faltar mas o advogado estiver presente, a contestação e os documentos são aceitos (art. 844, §5º, CLT)."
+  - "Juntar os relatórios do eSocial com cuidado: são declarações da própria empresa e, se contradisserem outros documentos, pesam contra ela."
+  - "Confirmar se o prazo e a data da audiência estão fora do período de 20/12 a 20/01 (art. 775-A, CLT)."
+
+obrigacoes_apos_acordo_ou_condenacao:
+  - "S-2500 (Processo Trabalhista): até o dia 15 do mês seguinte à homologação do acordo ou à ordem de cumprimento da decisão líquida transitada (obrigatório desde 01/10/2023). Informa as bases de FGTS e de contribuição previdenciária por competência."
+  - "S-2501 (Tributos do Processo Trabalhista): até o dia 15 do mês seguinte a cada pagamento, um por parcela, mesmo sem tributo a recolher. Os valores seguem para a DCTFWeb, que emite o DARF."
+  - "Acordo com verbas mal discriminadas aumenta a base previdenciária: discriminar a natureza de cada parcela."
+  - "Fonte: Manual do eSocial Web — Processo Trabalhista (gov.br/esocial), versão de 12/03/2024 — conferir a versão vigente."
+
+# Relatórios do eSocial que a empresa extrai e junta, por pedido (leiaute S-1.3).
+esocial:
+  eventos:
+    S-2200: "Admissão: data, cargo/CBO, salário e jornada contratual"
+    S-2206: "Alterações do contrato: promoções, função, salário e jornada"
+    S-2299: "Desligamento: motivo, datas, aviso prévio projetado e verbas rescisórias"
+    S-1200: "Remuneração mensal: rubricas pagas (horas extras, adicionais, comissões)"
+    S-1210: "Pagamentos e IR retido"
+    S-5003: "FGTS por trabalhador (totalizador)"
+    S-2230: "Afastamentos temporários"
+    S-2220: "ASO / monitoramento da saúde"
+    S-2240: "Condições ambientais: agentes nocivos, EPC e EPI"
+    S-2210: "Comunicação de acidente de trabalho (CAT)"
+  por_pedido:
+    horas_extras: [S-2200, S-2206, S-1200]
+    adicional_noturno: [S-2200, S-1200]
+    intervalo_intrajornada: [S-2200, S-1200]
+    intervalo_interjornada: [S-2200, S-1200]
+    domingos_feriados: [S-2200, S-1200]
+    verbas_rescisorias: [S-2299, S-1200, S-1210]
+    rescisao_indireta: [S-2299]
+    reversao_justa_causa: [S-2299]
+    guias_seguro_desemprego: [S-2299]
+    fgts: [S-5003, S-1200]
+    diferencas_salariais: [S-2206, S-1200]
+    equiparacao_salarial: [S-2200, S-2206, S-1200]
+    acumulo_desvio_funcao: [S-2200, S-2206]
+    salario_por_fora: [S-1200, S-1210]
+    comissoes: [S-1200]
+    beneficio_normativo: [S-1200]
+    vinculo_emprego: [S-2200]
+    insalubridade: [S-2240, S-1200]
+    periculosidade: [S-2240, S-1200]
+    estabilidade_gestante: [S-2299, S-2230]
+    estabilidade_acidentaria: [S-2230, S-2210, S-2220]
+    doenca_ocupacional: [S-2220, S-2210, S-2230, S-2240]
+    dano_material: [S-2210, S-2230]
+
+# Faixas da matriz de risco usadas como referência para a classificação contábil (CPC 25 / NBC TG 25).
+# Provável = mais provável que sim do que não (item 23): provisiona (item 14). Passivo contingente
+# não é reconhecido; é divulgado, salvo se remoto (itens 27, 28 e 86). "Possível" não é definido no
+# CPC 25 (faixa intermediária por convenção). A classificação final é do contador/auditor.
+classificacao_cpc25:
+  alta: "Provável — provisionar"
+  media: "Possível — divulgar em nota explicativa"
+  baixa: "Remota — sem provisão nem divulgação"
