@@ -39,7 +39,7 @@ regras:
   - tipo: acumulo_desvio_funcao
     palavras: 'ac[úu]mulo\s+de\s+fun[çc]|desvio\s+de\s+fun[çc]|plus\s+salarial'
   - tipo: diferencas_salariais
-    palavras: 'sal[áa]rio\s+(?:suprimido|ajustado|reduzido)|diferen[çc]as?\s+(?:de|do|salariais)\s*(?:sal[áa]rio)?|piso\s+(?:salarial|da\s+categoria)|reajuste'
+    palavras: 'sal[áa]rio\s+(?:suprimido|ajustado|reduzido)|diferen[çc]as?\s+(?:salariais|de\s+sal[áa]rio|do\s+sal[áa]rio)|piso\s+(?:salarial|da\s+categoria)|reajuste'
   - tipo: salario_por_fora
     palavras: 'por\s+fora|extrafolha|sal[áa]rio\s+marginal'
   - tipo: comissoes

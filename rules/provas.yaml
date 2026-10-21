@@ -9,7 +9,7 @@ versao: "2026-10-21"
 revisado_por: "pendente — Dr. Matheus Verissimo"
 
 documentos:
-  cartoes_ponto:   {rotulo: "Cartões / espelhos de ponto", quem: reclamada, palavras: 'espelho\s+de\s+ponto|cart[ãa]o\s+(?:de\s+)?ponto|registro\s+de\s+ponto|controle\s+de\s+jornada|entrada\s+sa[íi]da\s+entrada\s+sa[íi]da'}
+  cartoes_ponto:   {rotulo: "Cartões / espelhos de ponto", quem: reclamada, palavras: 'espelhos?\s+de\s+ponto|cart(?:[ãa]o|[õo]es)\s+(?:de\s+)?ponto|registros?\s+de\s+ponto|controle\s+de\s+jornada|entrada\s+sa[íi]da\s+entrada\s+sa[íi]da'}
   holerites:       {rotulo: "Holerites / recibos de pagamento", quem: reclamada, palavras: 'recibo\s+de\s+pagamento|demonstrativo\s+de\s+pagamento|holerite|contracheque|proventos.{0,40}descontos'}
   trct:            {rotulo: "TRCT / termo de rescisão", quem: reclamada, palavras: 'termo\s+de\s+rescis[ãa]o|TRCT|causa\s+do\s+afastamento'}
   ctps:            {rotulo: "CTPS", quem: neutro, palavras: 'carteira\s+de\s+trabalho|CTPS\s+digital|contratos\s+de\s+trabalho'}
