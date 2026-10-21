@@ -1,0 +1,68 @@
+# Quesitos padrão para perícia de insalubridade e periculosidade (art. 195, CLT).
+# Modelo inicial para o advogado adaptar ao caso: trocar [função], [setor], [agente] etc.
+# Mantido pelo advogado. Nenhum quesito vai à perícia sem revisão.
+#
+# Base normativa citada: arts. 189 a 197, CLT; NR-15 (insalubridade) e anexos; NR-16
+# (periculosidade) e anexos; NR-6 (EPI e Certificado de Aprovação); NR-9/PGR (NR-1).
+
+versao: "2026-10-21"
+revisado_por: "pendente — Dr. Matheus Verissimo"
+
+conjuntos:
+  - id: insalubridade_reclamante
+    titulo: "Insalubridade — quesitos do reclamante"
+    quesitos:
+      - "Descreva o Sr. Perito o local de trabalho e as atividades efetivamente exercidas pelo reclamante como [função], no setor [setor], durante todo o contrato."
+      - "O reclamante esteve exposto a agentes físicos, químicos ou biológicos (ex.: ruído, calor, poeiras, produtos químicos, agentes biológicos)? Quais, com que frequência e por quanto tempo na jornada?"
+      - "As medições foram feitas nas mesmas condições do período trabalhado? Caso o ambiente tenha mudado, como o Sr. Perito reconstituiu as condições anteriores?"
+      - "Os níveis de exposição apurados ultrapassam os limites de tolerância da NR-15 e seus anexos? Indique o anexo, o limite e o valor medido."
+      - "Para os agentes avaliados de forma qualitativa, a atividade está enquadrada em algum anexo da NR-15? Qual?"
+      - "A reclamada forneceu EPI desde a admissão? Junte ou indique as fichas de entrega com datas e número do Certificado de Aprovação (CA)."
+      - "Os EPIs tinham CA válido em cada período, eram adequados ao agente e foram trocados na periodicidade recomendada pelo fabricante?"
+      - "A reclamada treinou o reclamante e fiscalizou o uso efetivo dos EPIs? Há prova documental disso?"
+      - "Os EPIs fornecidos neutralizavam integralmente o agente insalubre, ou apenas o atenuavam? Justifique tecnicamente."
+      - "Os documentos ambientais da reclamada (PGR, LTCAT, PCMSO, PPP) reconhecem a exposição a algum agente? Em que grau?"
+      - "Conclua o Sr. Perito: as atividades do reclamante eram insalubres? Em que grau (mínimo, médio ou máximo) e em quais períodos?"
+      - "Outros esclarecimentos que o Sr. Perito entender úteis ao deslinde da causa."
+
+  - id: insalubridade_reclamada
+    titulo: "Insalubridade — quesitos da reclamada"
+    quesitos:
+      - "Descreva o Sr. Perito as atividades do reclamante e o local onde eram exercidas, informando quem acompanhou a diligência e as informações prestadas por cada parte."
+      - "O ambiente periciado corresponde ao local e às condições de trabalho do reclamante? Houve alteração do layout, das máquinas ou dos processos?"
+      - "Quais agentes foram avaliados, por qual método e com quais equipamentos (com certificado de calibração)?"
+      - "A exposição a cada agente era habitual e permanente, ou eventual e intermitente? Por quanto tempo da jornada?"
+      - "Os níveis medidos estão abaixo dos limites de tolerância da NR-15? Indique o anexo e o limite aplicável."
+      - "Queira o Sr. Perito analisar as fichas de entrega de EPI juntadas: os equipamentos tinham CA válido e eram adequados ao agente?"
+      - "Os EPIs fornecidos eliminavam ou neutralizavam o agente, reduzindo a exposição a níveis abaixo do limite de tolerância (art. 191, II, CLT)?"
+      - "A reclamada adotava medidas de proteção coletiva (EPC) ou de organização do trabalho que reduziam a exposição? Quais?"
+      - "O reclamante recebeu treinamento sobre o uso dos EPIs? Há registros?"
+      - "O PGR, o LTCAT e o PCMSO da reclamada foram analisados? Suas conclusões coincidem com as do laudo? Se não, por quê?"
+      - "A atividade do reclamante está expressamente prevista em algum anexo da NR-15? Se não, a insalubridade pode ser reconhecida?"
+      - "Conclua o Sr. Perito: havia insalubridade? Se sim, em que grau e em quais períodos, considerando os EPIs fornecidos?"
+
+  - id: periculosidade_reclamante
+    titulo: "Periculosidade — quesitos do reclamante"
+    quesitos:
+      - "Descreva o Sr. Perito o local de trabalho e as atividades efetivamente exercidas pelo reclamante como [função], no setor [setor]."
+      - "O reclamante trabalhava com ou próximo a inflamáveis, explosivos, energia elétrica, radiações ionizantes, em atividades de segurança pessoal/patrimonial ou com motocicleta (NR-16 e anexos)? Qual?"
+      - "O reclamante adentrava ou permanecia em área de risco? Indique a área de risco conforme a NR-16 e a distância do local de trabalho até a fonte de risco."
+      - "Com que frequência e por quanto tempo o reclamante ficava exposto ao risco? A exposição era habitual, ainda que intermitente?"
+      - "Havia armazenamento de inflamáveis no prédio ou no recinto onde o reclamante trabalhava? Em que quantidade e de que forma?"
+      - "No caso de energia elétrica: o reclamante trabalhava em sistema elétrico de potência, ou em instalações energizadas, ou próximo delas, com risco equivalente?"
+      - "Os documentos da reclamada (PGR, LTCAT, PPP) reconhecem o risco? Em que termos?"
+      - "Conclua o Sr. Perito: as atividades do reclamante eram perigosas nos termos do art. 193 da CLT e da NR-16? Em quais períodos?"
+      - "Outros esclarecimentos que o Sr. Perito entender úteis ao deslinde da causa."
+
+  - id: periculosidade_reclamada
+    titulo: "Periculosidade — quesitos da reclamada"
+    quesitos:
+      - "Descreva o Sr. Perito as atividades do reclamante e o local onde eram exercidas, informando quem acompanhou a diligência e as informações prestadas por cada parte."
+      - "Qual agente de risco foi analisado e em qual anexo da NR-16 a atividade estaria enquadrada?"
+      - "O reclamante adentrava a área de risco definida na NR-16? Indique com precisão os limites da área e a posição do posto de trabalho."
+      - "A exposição era eventual, ou, sendo habitual, se dava por tempo extremamente reduzido? Quantifique o tempo de exposição por jornada."
+      - "As quantidades de inflamáveis armazenadas estão abaixo dos limites que caracterizam a periculosidade na NR-16? Os recipientes e o armazenamento atendiam às normas?"
+      - "Os tanques de combustível para consumo próprio de veículos ou equipamentos se enquadram nas exceções da NR-16?"
+      - "No caso de energia elétrica: o reclamante era trabalhador autorizado (NR-10) e realizava intervenções em instalações energizadas, ou apenas operava equipamentos de uso comum?"
+      - "O PGR, o LTCAT e o PPP da reclamada foram analisados? Suas conclusões coincidem com as do laudo? Se não, por quê?"
+      - "Conclua o Sr. Perito: havia periculosidade? Se sim, em quais períodos e por qual agente?"
