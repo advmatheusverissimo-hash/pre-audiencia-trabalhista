@@ -1,0 +1,44 @@
+# Correção monetária e juros dos créditos trabalhistas — usado na calculadora de liquidação.
+# Mantido pelo advogado. A calculadora só aplica o que está aqui; é ESTIMATIVA e não substitui
+# o PJe-Calc (ferramenta oficial da Justiça do Trabalho), que deve ser usado na conta homologada.
+#
+# Índices: Banco Central, SGS (api.bcb.gov.br/dados/serie/bcdata.sgs.<código>), variação mensal %.
+#   10764 = IPCA-E · 433 = IPCA · 4390 = Selic acumulada no mês · 7811 = TR mensal
+#
+# Fases (ADC 58 e 59, STF; Lei 14.905/2024; SDI-1, E-ED-RR-713-03.2010.5.04.0029, DEJT 25/10/2024):
+#   1) pré-judicial (vencimento até o mês anterior ao ajuizamento): IPCA-E + juros do art. 39,
+#      caput, da Lei 8.177/91 (TR);
+#   2) do ajuizamento até 29/08/2024: Selic (já inclui correção e juros);
+#   3) a partir de 30/08/2024: IPCA + juros = Selic − IPCA (se negativo, zero).
+# situacao: a_conferir — conferir o entendimento vigente no TST e a decisão do processo.
+
+versao: "2026-10-21"
+revisado_por: "pendente — Dr. Matheus Verissimo"
+situacao: a_conferir
+
+series:
+  ipca_e: 10764
+  ipca: 433
+  selic: 4390
+  tr: 7811
+
+# Época própria: o crédito do mês só é corrigido a partir do mês seguinte ao da prestação
+# (art. 459, §1º, CLT; Súmula 381, TST — conferir).
+epoca_propria: mes_subsequente
+
+fases:
+  - id: pre_judicial
+    rotulo: "Pré-judicial (IPCA-E + TR)"
+    ate: ajuizamento
+    correcao: ipca_e
+    juros: tr
+  - id: judicial_selic
+    rotulo: "Ajuizamento até 29/08/2024 (Selic)"
+    ate: "2024-08"
+    correcao: null
+    juros: selic
+  - id: judicial_ipca
+    rotulo: "A partir de 30/08/2024 (IPCA + Selic − IPCA)"
+    ate: null
+    correcao: ipca
+    juros: selic_menos_ipca
