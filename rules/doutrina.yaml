@@ -1,0 +1,138 @@
+# Referências de doutrina para consulta no parecer (autor, obra, link) — só metadados.
+#
+# Regras do projeto:
+# - Nada de texto integral de livro ou artigo aqui (Lei 9.610/98). Só referência e link para a
+#   fonte oficial ou de acesso aberto.
+# - `trecho` é citação curta (art. 46, III, Lei 9.610/98), escolhida e conferida pelo advogado na
+#   fonte, com a página. Enquanto `situacao: a_conferir`, o parecer mostra só a referência e o link,
+#   nunca o trecho.
+# - `pedidos` e `temas` ligam a obra ao caso. A ligação abaixo é sugestão: o advogado confirma.
+#   Temas automáticos: prescricao (há prescrição apontada no caso), sumarissimo (rito sumaríssimo).
+# - Livros comerciais (Delgado, Cassar, Bezerra Leite, Homero, Schiavi etc.) entram só pela
+#   referência e pelo trecho digitado pelo advogado; nenhum PDF é baixado ou guardado.
+#
+# Acervos de acesso aberto usados (pesquisa de 21/10/2026):
+#   JusLaboris (Biblioteca Digital do TST): https://juslaboris.tst.jus.br
+#   Revista do TST (CC BY-NC-ND 4.0 — citar e linkar): https://revista.tst.jus.br
+#   Revista da Escola Judicial do TRT-4 (CC BY 4.0): https://periodicos.trt4.jus.br/revistaejud4
+#   Publicações da EJUD2 (TRT-2): https://ww2.trt2.jus.br
+
+versao: "2026-10-21"
+revisado_por: "pendente — Dr. Matheus Verissimo"
+
+obras:
+  - id: delgado-prescricao-2008
+    autor: "Maurício Godinho Delgado"
+    titulo: "A prescrição na Justiça do Trabalho: novos desafios"
+    veiculo: "Revista do TST, v. 74, n. 1"
+    ano: 2008
+    link: "https://juslaboris.tst.jus.br/handle/20.500.12178/1892"
+    acervo: "JusLaboris (TST)"
+    licenca: "Revista do TST — citação curta com autoria e link"
+    acesso: aberto
+    pedidos: []
+    temas: [prescricao]
+    trecho: null
+    pagina: null
+    situacao: a_conferir
+    conferido_em: null
+
+  - id: delgado-competencia-2005
+    autor: "Maurício Godinho Delgado"
+    titulo: "As duas faces da nova competência da Justiça do Trabalho"
+    veiculo: "Revista do TST, v. 71, n. 1"
+    ano: 2005
+    link: "https://juslaboris.tst.jus.br/handle/20.500.12178/3714"
+    acervo: "JusLaboris (TST)"
+    licenca: "Revista do TST — citação curta com autoria e link"
+    acesso: aberto
+    pedidos: [vinculo_emprego, dano_moral, doenca_ocupacional]
+    temas: [competencia]
+    trecho: null
+    pagina: null
+    situacao: a_conferir
+    conferido_em: null
+
+  - id: delgado-principios-2001
+    autor: "Maurício Godinho Delgado"
+    titulo: "Princípios de direito individual e coletivo do trabalho (trecho)"
+    veiculo: "LTr"
+    ano: 2001
+    link: "https://juslaboris.tst.jus.br/handle/20.500.12178/174352"
+    acervo: "JusLaboris (TST)"
+    licenca: "Livro comercial — só citação curta com autoria"
+    acesso: aberto
+    pedidos: [vinculo_emprego, salario_por_fora, diferencas_salariais, verbas_rescisorias]
+    temas: [principios]
+    trecho: null
+    pagina: null
+    situacao: a_conferir
+    conferido_em: null
+
+  - id: cassar-sumarissimo-2000
+    autor: "Vólia Bomfim Cassar"
+    titulo: "Procedimento sumaríssimo"
+    veiculo: "Revista do TRT da 1ª Região, n. 25"
+    ano: 2000
+    link: "https://juslaboris.tst.jus.br/handle/20.500.12178/213843"
+    acervo: "JusLaboris (TST)"
+    licenca: "Revista de tribunal — citação curta com autoria e link"
+    acesso: aberto
+    pedidos: []
+    temas: [sumarissimo]
+    trecho: null
+    pagina: null
+    situacao: a_conferir
+    conferido_em: null
+
+  - id: bezerra-leite-eficacia-horizontal-2011
+    autor: "Carlos Henrique Bezerra Leite"
+    titulo: "Eficácia horizontal dos direitos fundamentais na relação de emprego"
+    veiculo: "Revista LTr, jan."
+    ano: 2011
+    link: "https://juslaboris.tst.jus.br/handle/20.500.12178/104972"
+    acervo: "JusLaboris (TST)"
+    licenca: "Revista comercial — só citação curta com autoria"
+    acesso: restrito  # o PDF provavelmente só abre para usuários internos do TST
+    pedidos: [dano_moral, assedio_moral, risco_psicossocial]
+    temas: []
+    trecho: null
+    pagina: null
+    situacao: a_conferir
+    conferido_em: null
+
+  - id: ejud2-30-anos-2024
+    autor: "Vários autores (TRT-2/EJUD2)"
+    titulo: "30 anos da EJUD2: 1993-2023"
+    veiculo: "TRT da 2ª Região — Escola Judicial, ISBN 978-65-984962-0-3"
+    ano: 2024
+    link: "https://ww2.trt2.jus.br/fileadmin/ejud/5.publicacoes/2024-livro30anos-ejud-v1.0-20241016.pdf"
+    acervo: "TRT-2 (download oficial gratuito)"
+    licenca: "Sem licença declarada — só citação curta com autoria e link"
+    acesso: aberto
+    pedidos: []
+    temas: []
+    trecho: null
+    pagina: null
+    situacao: a_conferir
+    conferido_em: null
+
+  - id: anamatra-2a-jornada-2017
+    autor: "ANAMATRA, ANPT, ABRAT e SINAIT"
+    titulo: "Enunciados da 2ª Jornada de Direito Material e Processual do Trabalho (reforma trabalhista)"
+    veiculo: "Enunciados aprovados (caráter doutrinário, não vinculante)"
+    ano: 2017
+    link: "https://www.anamatra.org.br"  # conferir a URL oficial atual da listagem dos enunciados
+    acervo: "ANAMATRA"
+    licenca: "Enunciado — citar número e texto conferido"
+    acesso: aberto
+    pedidos: [horas_extras, intervalo_intrajornada, dano_moral, insalubridade]
+    temas: [reforma_trabalhista]
+    trecho: null
+    pagina: null
+    situacao: a_conferir
+    conferido_em: null
+
+# Autores sem registro em acesso aberto encontrado (consultar no JusLaboris pelo nome e
+# acrescentar aqui só o que tiver link oficial): Homero Batista Mateus da Silva, Mauro Schiavi,
+# Gustavo Filipe Barbosa Garcia, Amauri Mascaro Nascimento, Sergio Pinto Martins.
