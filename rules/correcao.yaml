@@ -42,3 +42,15 @@ fases:
     ate: null
     correcao: ipca
     juros: selic_menos_ipca
+
+# Encargos calculados sobre a condenação (padrão do PJe-Calc). Mantido pelo advogado.
+fgts:
+  aliquota: 0.08          # art. 15, Lei 8.036/90
+  multa_rescisoria: 0.40  # art. 18, §1º, Lei 8.036/90 (dispensa sem justa causa)
+  # FGTS deferido em juízo segue os mesmos índices dos créditos trabalhistas (OJ 302, SDI-1, TST — conferir).
+
+custas:
+  aliquota: 0.02          # art. 789, I, CLT (sobre o valor da condenação ou do acordo)
+  minimo: 10.64           # art. 789, caput, CLT
+  maximo_multiplo_teto: 4 # art. 789, caput: 4 vezes o limite máximo dos benefícios do RGPS
+  teto_rgps: 8475.55      # 2026 — Portaria Interministerial MPS/MF nº 13/2026; atualizar todo janeiro
