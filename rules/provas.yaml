@@ -1,0 +1,57 @@
+# Inventário de provas do processo, sem IA: tipos de documento reconhecidos no PDF por palavras-chave
+# e quais deles sustentam (ou contrariam) cada tipo de pedido. Alimenta a matriz de risco:
+# alegação sem prova do lado que tem o ônus = chance baixa.
+#
+# `quem`: reclamante (prova a favor do pedido) | reclamada (documento típico da defesa) | neutro
+# Prova oral (testemunhas) não aparece no PDF antes da audiência: é informada pelo advogado na tela.
+
+versao: "2026-10-21"
+revisado_por: "pendente — Dr. Matheus Verissimo"
+
+documentos:
+  cartoes_ponto:   {rotulo: "Cartões / espelhos de ponto", quem: reclamada, palavras: 'espelho\s+de\s+ponto|cart[ãa]o\s+(?:de\s+)?ponto|registro\s+de\s+ponto|controle\s+de\s+jornada|entrada\s+sa[íi]da\s+entrada\s+sa[íi]da'}
+  holerites:       {rotulo: "Holerites / recibos de pagamento", quem: reclamada, palavras: 'recibo\s+de\s+pagamento|demonstrativo\s+de\s+pagamento|holerite|contracheque|proventos.{0,40}descontos'}
+  trct:            {rotulo: "TRCT / termo de rescisão", quem: reclamada, palavras: 'termo\s+de\s+rescis[ãa]o|TRCT|causa\s+do\s+afastamento'}
+  ctps:            {rotulo: "CTPS", quem: neutro, palavras: 'carteira\s+de\s+trabalho|CTPS\s+digital|contratos\s+de\s+trabalho'}
+  extrato_fgts:    {rotulo: "Extrato do FGTS", quem: neutro, palavras: 'extrato\s+(?:anal[íi]tico\s+)?(?:do\s+)?FGTS|conta\s+vinculada'}
+  ficha_epi:       {rotulo: "Ficha de entrega de EPI", quem: reclamada, palavras: 'ficha\s+de\s+(?:entrega\s+de\s+)?EPI|equipamento\s+de\s+prote[çc][ãa]o\s+individual.{0,80}(?:entrega|recebi)|certificado\s+de\s+aprova[çc][ãa]o'}
+  laudo_tecnico:   {rotulo: "Laudo técnico / PGR / LTCAT / PPP", quem: neutro, palavras: '\bLTCAT\b|\bPPRA\b|\bPGR\b|\bPPP\b|perfil\s+profissiogr[áa]fico|laudo\s+t[ée]cnico'}
+  atestados:       {rotulo: "Atestados / documentos médicos", quem: reclamante, palavras: 'atestado\s+m[ée]dico|\bCID\b|prontu[áa]rio|relat[óo]rio\s+m[ée]dico|afastamento\s+m[ée]dico'}
+  cat:             {rotulo: "CAT / benefício acidentário", quem: reclamante, palavras: 'comunica[çc][ãa]o\s+de\s+acidente|\bCAT\b|aux[íi]lio[-\s]doen[çc]a\s+acident|\bB91\b'}
+  mensagens:       {rotulo: "Mensagens / prints / e-mails", quem: reclamante, palavras: 'whats\s*app|print\s+de\s+tela|captura\s+de\s+tela|conversa\s+(?:de|por)\s+mensagem|e-mail\s+enviado'}
+  norma_coletiva:  {rotulo: "Norma coletiva", quem: reclamante, palavras: 'conven[çc][ãa]o\s+coletiva\s+de\s+trabalho|acordo\s+coletivo\s+de\s+trabalho|cl[áa]usula\s+\d+'}
+  advertencias:    {rotulo: "Advertências / suspensões", quem: reclamada, palavras: 'advert[êe]ncia\s+(?:disciplinar|por\s+escrito)|suspens[ãa]o\s+disciplinar|carta\s+de\s+advert'}
+  pedido_demissao: {rotulo: "Pedido de demissão escrito", quem: reclamada, palavras: 'venho\s+(?:por\s+meio\s+desta\s+)?(?:solicitar|pedir)\s+(?:o\s+meu\s+)?desligamento|pedido\s+de\s+demiss[ãa]o'}
+  exame_gravidez:  {rotulo: "Exame de gravidez / ultrassom", quem: reclamante, palavras: 'beta\s*-?\s*hcg|ultrassonografia\s+obst|idade\s+gestacional'}
+  boletim:         {rotulo: "Boletim de ocorrência", quem: reclamante, palavras: 'boletim\s+de\s+ocorr[êe]ncia'}
+
+# Para cada tipo de pedido: documentos que provam o pedido (a favor do reclamante) e documentos
+# típicos da defesa. Tipos ausentes aqui não ganham nem perdem por prova documental.
+por_pedido:
+  horas_extras:           {a_favor: [mensagens], defesa: [cartoes_ponto, holerites]}
+  adicional_noturno:      {a_favor: [mensagens], defesa: [cartoes_ponto, holerites]}
+  intervalo_intrajornada: {a_favor: [], defesa: [cartoes_ponto]}
+  intervalo_interjornada: {a_favor: [], defesa: [cartoes_ponto]}
+  domingos_feriados:      {a_favor: [], defesa: [cartoes_ponto, holerites]}
+  verbas_rescisorias:     {a_favor: [ctps], defesa: [trct, holerites]}
+  reversao_justa_causa:   {a_favor: [], defesa: [advertencias]}
+  rescisao_indireta:      {a_favor: [mensagens, extrato_fgts, boletim], defesa: []}
+  fgts:                   {a_favor: [extrato_fgts], defesa: [extrato_fgts]}
+  guias_seguro_desemprego: {a_favor: [], defesa: [trct]}
+  insalubridade:          {a_favor: [laudo_tecnico], defesa: [ficha_epi, laudo_tecnico]}
+  periculosidade:         {a_favor: [laudo_tecnico], defesa: [laudo_tecnico]}
+  doenca_ocupacional:     {a_favor: [atestados, cat], defesa: [laudo_tecnico]}
+  estabilidade_gestante:  {a_favor: [exame_gravidez], defesa: []}
+  estabilidade_acidentaria: {a_favor: [cat, atestados], defesa: []}
+  dano_moral:             {a_favor: [mensagens, atestados, boletim], defesa: []}
+  assedio_moral:          {a_favor: [mensagens, atestados, boletim], defesa: []}
+  risco_psicossocial:     {a_favor: [atestados, laudo_tecnico], defesa: [laudo_tecnico]}
+  dano_material:          {a_favor: [atestados], defesa: []}
+  vinculo_emprego:        {a_favor: [mensagens, ctps], defesa: []}
+  equiparacao_salarial:   {a_favor: [holerites], defesa: [holerites]}
+  acumulo_desvio_funcao:  {a_favor: [mensagens], defesa: []}
+  diferencas_salariais:   {a_favor: [holerites, mensagens], defesa: [holerites]}
+  salario_por_fora:       {a_favor: [mensagens], defesa: [holerites]}
+  comissoes:              {a_favor: [mensagens], defesa: [holerites]}
+  beneficio_normativo:    {a_favor: [norma_coletiva], defesa: [holerites]}
+  vale_transporte:        {a_favor: [], defesa: [holerites]}

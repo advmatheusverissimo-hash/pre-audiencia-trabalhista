@@ -1,0 +1,66 @@
+# Como cada item do rol de pedidos vira um tipo de pedido, sem IA.
+# Vale o assunto que aparece PRIMEIRO no texto do item (ex.: "Reflexos das horas extras no FGTS"
+# é horas_extras). Expressões regulares, sem diferenciar maiúsculas.
+# tipo "acessorio": pedido que não tem prova de mérito (honorários, gratuidade, ofícios, juros).
+# tipo "outro": sem regra — advogado define.
+
+versao: "2026-10-21"
+revisado_por: "pendente — Dr. Matheus Verissimo"
+
+regras:
+  - tipo: acessorio
+    palavras: 'honor[áa]rios|justi[çc]a\s+gratuita|of[íi]cio|juros|corre[çc][ãa]o\s+monet|recolhimentos?\s+(?:previdenci|fiscais)|dedu[çc][ãa]o|compensa[çc][ãa]o\s+de\s+valores|provar\s+o\s+alegado|notifica[çc][ãa]o|cita[çc][ãa]o'
+  - tipo: rescisao_indireta
+    palavras: 'rescis[ãa]o\s+indireta|art(?:igo)?\.?\s*483'
+  - tipo: reversao_justa_causa
+    palavras: '(?:revers[ãa]o|nulidade|afastamento)\s+d[ae]\s+justa\s+causa|justa\s+causa'
+  - tipo: insalubridade
+    palavras: 'insalubridade'
+  - tipo: periculosidade
+    palavras: 'periculosidade'
+  - tipo: doenca_ocupacional
+    palavras: 'doen[çc]a\s+(?:ocupacional|do\s+trabalho|profissional)|acidente\s+(?:de|do)\s+trabalho|\bLER\b|\bDORT\b|burnout|nexo\s+causal'
+  - tipo: estabilidade_gestante
+    palavras: 'gestante|gravidez|gr[áa]vida'
+  - tipo: estabilidade_acidentaria
+    palavras: 'estabilidade\s+acident|art(?:igo)?\.?\s*118'
+  - tipo: adicional_noturno
+    palavras: 'adicional\s+noturno|hora\s+noturna|trabalho\s+noturno'
+  - tipo: intervalo_interjornada
+    palavras: 'interjornada|art(?:igo)?\.?\s*66'
+  - tipo: intervalo_intrajornada
+    palavras: 'intervalo|intrajornada|art(?:igo)?\.?\s*71'
+  - tipo: domingos_feriados
+    palavras: 'domingos?|feriados?|folgas?\s+trabalhad|dobra|jornada\s+6\s*x\s*1|DSR\s+trabalhad'
+  - tipo: horas_extras
+    palavras: 'horas?\s+extras?|sobrejornada|jornada\s+extraordin'
+  - tipo: equiparacao_salarial
+    palavras: 'equipara[çc][ãa]o\s+salarial|paradigma'
+  - tipo: acumulo_desvio_funcao
+    palavras: 'ac[úu]mulo\s+de\s+fun[çc]|desvio\s+de\s+fun[çc]|plus\s+salarial'
+  - tipo: diferencas_salariais
+    palavras: 'sal[áa]rio\s+(?:suprimido|ajustado|reduzido)|diferen[çc]as?\s+(?:de|do|salariais)\s*(?:sal[áa]rio)?|piso\s+(?:salarial|da\s+categoria)|reajuste'
+  - tipo: salario_por_fora
+    palavras: 'por\s+fora|extrafolha|sal[áa]rio\s+marginal'
+  - tipo: comissoes
+    palavras: 'comiss[õo]es|comiss[ãa]o'
+  - tipo: beneficio_normativo
+    palavras: 'vale[-\s]alimenta|vale[-\s]refei|cesta\s+b[áa]sica|\bPLR\b|participa[çc][ãa]o\s+nos\s+lucros|conven[çc][ãa]o\s+coletiva|acordo\s+coletivo|norma\s+coletiva'
+  - tipo: assedio_moral
+    palavras: 'ass[ée]dio\s+moral'
+  - tipo: risco_psicossocial
+    palavras: 'riscos?\s+psicossocia|NR-?1\b'
+  - tipo: dano_moral
+    palavras: 'dano\s+moral|danos\s+morais|dano\s+existencial'
+  - tipo: dano_material
+    palavras: 'dano\s+material|danos\s+materiais|lucros\s+cessantes|pens[ãa]o\s+mensal'
+  - tipo: vinculo_emprego
+    palavras: 'v[íi]nculo|anota[çc][ãa]o\s+(?:na|em)\s+CTPS|CTPS|sem\s+registro|reconhecimento\s+do\s+contrato'
+  - tipo: guias_seguro_desemprego
+    palavras: 'guias|seguro[-\s]desemprego'
+  - tipo: vale_transporte
+    palavras: 'vale[-\s]transporte'
+  - tipo: fgts
+    palavras: '\bFGTS\b|fundo\s+de\s+garantia'
+  - tipo: verbas_rescisorias
+    palavras: 'saldo\s+de\s+sal[áa]rio|aviso\s+pr[ée]vio|13[ºo°]?\s*sal[áa]rio|d[ée]cimo\s+terceiro|f[ée]rias|art(?:igo)?s?\.?\s*46[7]|art(?:igo)?s?\.?\s*477|multa\s+rescis|verbas\s+rescis'

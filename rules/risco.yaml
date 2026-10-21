@@ -1,0 +1,72 @@
+# Matriz de risco e valor de acordo (pesquisa, seções 7.4 e 7.5) — cálculo determinístico.
+#
+# Probabilidade de deferimento de cada pedido, do ponto de vista do reclamante:
+#   chance = logística( log-odds(base) + soma dos ajustes dos fatores presentes )
+# A base de cada tema começa NEUTRA (50%) porque não há dado do escritório ainda.
+# Calibrar com 30–50 processos encerrados: preencher `base` por tipo e anotar `fonte`.
+# Nada aqui é estatística de tribunal; são pesos de julgamento do advogado, ajustáveis.
+
+versao: "2026-10-21"
+revisado_por: "pendente — Dr. Matheus Verissimo"
+calibrado: false
+
+base_padrao: 0.5
+base_por_tipo: {}   # ex.: {horas_extras: 0.62}  — com `fonte` ao lado quando calibrar
+
+# Ajustes em log-odds (+ aumenta a chance de deferimento; − diminui).
+fatores:
+  onus_reclamada:
+    peso: 0.5
+    texto: "Ônus da prova é da reclamada"
+  presuncao_jornada:
+    peso: 0.7
+    texto: "Presunção da jornada da inicial (controles ausentes ou britânicos — Súmula 338, I e III, TST)"
+  onus_reclamante_prova_oral:
+    peso: -0.3
+    texto: "Ônus do reclamante e a prova depende de testemunha"
+  tese_com_documento:
+    peso: -0.4
+    texto: "Defesa com documento típico (ponto, EPI, recibo, norma)"
+  tese_sem_documento:
+    peso: -0.1
+    texto: "Defesa apenas negando o fato"
+  prova_a_favor:
+    peso: 0.5
+    texto: "Há documento nos autos que sustenta o pedido"
+  sem_prova_onus_proprio:
+    peso: -0.9
+    texto: "Ônus do reclamante e não há prova documental do pedido nos autos"
+  documento_defesa_juntado:
+    peso: -0.4
+    texto: "A reclamada juntou o documento típico da defesa"
+  documento_defesa_ausente:
+    peso: 0.4
+    texto: "Ônus da reclamada e o documento típico da defesa não está nos autos"
+  testemunha_informada:
+    peso: 0.4
+    texto: "Advogado informou testemunha sobre o fato"
+  prescricao_parcial:
+    peso: -0.2
+    texto: "Parte do período prescrita (quinquenal)"
+
+# Situações que fixam a chance, independentemente dos fatores.
+fixos:
+  prescricao_total: {chance: 0.03, texto: "Período inteiro prescrito"}
+  prescricao_bienal: {chance: 0.05, texto: "Ação ajuizada após o prazo bienal"}
+
+# Largura da faixa (± em pontos percentuais da chance).
+faixa:
+  padrao: 0.15
+  extra_pericia: 0.10        # resultado depende de laudo
+  extra_tema_sensivel: 0.10  # tema suspenso ou em mudança
+  extra_sem_regra: 0.15      # pedido sem regra de ônus
+
+# Matriz 3x3.
+matriz:
+  probabilidade: {baixa_ate: 0.35, media_ate: 0.65}
+  impacto_percentual_do_total: {baixo_ate: 0.05, medio_ate: 0.15}
+
+# Valor de acordo (reclamante): abertura = cenário alto, alvo = valor esperado, piso = cenário baixo.
+# Sem correção, juros e tempo até o pagamento nesta versão (fase seguinte).
+acordo:
+  honorarios_sucumbencia: 0.10   # art. 791-A, CLT (5% a 15%); só informativo no custo de perder

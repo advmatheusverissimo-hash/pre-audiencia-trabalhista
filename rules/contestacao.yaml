@@ -1,0 +1,25 @@
+# Como as teses da contestação são reconhecidas sem IA (palavras-chave no texto da defesa).
+# Cada tese vale para os pedidos listados em teses-defesa.yaml.
+# Também define sinais sobre a prova documental (controles de ponto) e a ruptura alegada.
+
+versao: "2026-10-21"
+revisado_por: "pendente — Dr. Matheus Verissimo"
+
+teses:
+  cargo_confianca: 'cargo\s+de\s+confian[çc]a|art(?:igo)?\.?\s*62,?\s*(?:inciso\s+)?II|gest[ãa]o\s+com\s+poderes'
+  compensacao_banco_horas: 'banco\s+de\s+horas|compensa[çc][ãa]o\s+de\s+jornada|acordo\s+de\s+compensa'
+  controles_ponto_validos: 'cart[õo]es\s+de\s+ponto|controles?\s+de\s+(?:ponto|jornada)|espelhos?\s+de\s+ponto|registros?\s+de\s+ponto'
+  pagamento_deducao: 'dedu[çc][ãa]o|compensa[çc][ãa]o\s+de\s+valores|valores\s+(?:j[áa]\s+)?pagos'
+  justa_causa: 'justa\s+causa|art(?:igo)?\.?\s*482'
+  pedido_demissao: 'pedido\s+de\s+demiss[ãa]o|pediu\s+demiss[ãa]o|pedido\s+de\s+desligamento'
+  abandono: 'abandono\s+de\s+emprego'
+  nega_prestacao: 'nega\s+(?:a\s+)?presta[çc][ãa]o|jamais\s+(?:trabalhou|prestou)|nunca\s+(?:trabalhou|prestou)'
+  autonomo: 'aut[ôo]nom[oa]|prestador\s+de\s+servi[çc]os?\s+eventual|sem\s+subordina[çc][ãa]o'
+  pejotizacao: 'pessoa\s+jur[íi]dica|contrato\s+entre\s+empresas|nota\s+fiscal'
+  epi_fornecido: '\bEPIs?\b|equipamentos?\s+de\s+prote[çc][ãa]o|certificado\s+de\s+aprova[çc][ãa]o|\bCA\b'
+  ausencia_prova_fato: 'inexist[êe]ncia\s+de\s+(?:prova|ass[ée]dio|dano)|n[ãa]o\s+(?:houve|ocorreu)\s+(?:ass[ée]dio|humilha)|nega\s+(?:os\s+fatos|o\s+ass[ée]dio)'
+
+# Sinais sobre os controles de ponto juntados (usados nas regras de ônus de jornada).
+controles_ponto:
+  britanicos: 'brit[âa]nic|hor[áa]rios?\s+(?:invari[áa]veis|uniformes)'
+  variaveis: 'junta(?:m|ndo)?\s+(?:os\s+)?cart[õo]es|cart[õo]es\s+de\s+ponto\s+(?:anexos|juntados|assinados)|registros?\s+vari[áa]ve'

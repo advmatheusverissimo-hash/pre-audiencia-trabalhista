@@ -2,7 +2,7 @@
 # Perguntas-base por pedido; os subagentes podem acrescentar perguntas específicas do caso,
 # mas estas são o esqueleto fixo, revisado pelo advogado.
 
-versao: "2026-10-20"
+versao: "2026-10-21"
 
 limite_testemunhas:
   ordinario: {quantidade: 3, fundamento: "Art. 821, CLT"}
@@ -72,6 +72,41 @@ perguntas:
       - "Isso se repetia? Com que frequência? Quem mais presenciava?"
     testemunha_adversa:
       - "O(a) senhor(a) trabalhava diretamente com o superior ___? (sim/não)"
+  adicional_noturno:
+    preposto:
+      - "Até que horas o reclamante trabalhava? Havia trabalho após as 22h?"
+    testemunha_propria:
+      - "Em que horário vocês encerravam o trabalho? Com que frequência passava das 22h?"
+    testemunha_adversa:
+      - "O(a) senhor(a) saía junto com o reclamante? (sim/não)"
+  intervalo_intrajornada:
+    preposto:
+      - "Quanto tempo o reclamante tinha de almoço? Quem cobria o posto nesse período?"
+    testemunha_propria:
+      - "Quanto tempo vocês tinham de fato para almoçar? Alguém interrompia?"
+    testemunha_adversa:
+      - "O(a) senhor(a) almoçava no mesmo horário do reclamante? (sim/não)"
+  domingos_feriados:
+    preposto:
+      - "Qual era a escala do reclamante? Havia folga compensatória pelos domingos e feriados?"
+    testemunha_propria:
+      - "Quantos domingos por mês vocês trabalhavam? A folga era dada em outro dia?"
+    testemunha_adversa:
+      - "O(a) senhor(a) trabalhava na mesma escala do reclamante? (sim/não)"
+  rescisao_indireta:
+    preposto:
+      - "A empresa deixou de pagar algum salário, FGTS ou benefício do reclamante?"
+    testemunha_propria:
+      - "O(a) senhor(a) presenciou os fatos que levaram o reclamante a sair? Quando?"
+    testemunha_adversa:
+      - "O(a) senhor(a) estava presente quando os fatos ocorreram? (sim/não)"
+  acumulo_desvio_funcao:
+    preposto:
+      - "Quais tarefas o reclamante fazia além das da função contratada? Desde quando?"
+    testemunha_propria:
+      - "Descreva o que o reclamante fazia num dia normal. Quem fazia essas tarefas antes?"
+    testemunha_adversa:
+      - "O reclamante fazia a tarefa ___? (um fato por vez)"
 
 contradita:
   gatilhos:

@@ -3,43 +3,43 @@
 # Mantido pelo advogado. Para cada pedido: as teses que a reclamada costuma usar, o documento
 # que sustenta cada uma e "o que fazer se vier".
 
-versao: "2026-10-20"
+versao: "2026-10-21"
 revisado_por: "pendente — Dr. Matheus Verissimo"
 
 teses:
   controles_ponto_validos:
     rotulo: "Cartões de ponto variáveis e assinados"
-    pedidos: [horas_extras]
+    pedidos: [horas_extras, adicional_noturno, intervalo_intrajornada, intervalo_interjornada, domingos_feriados]
     documento_esperado: "Cartões de ponto / espelhos assinados"
     se_vier: "Impugnar na réplica; testemunha para desconstituir (ordem para bater e voltar, horário real)."
   compensacao_banco_horas:
     rotulo: "Banco de horas / acordo de compensação"
-    pedidos: [horas_extras]
+    pedidos: [horas_extras, domingos_feriados]
     documento_esperado: "Acordo individual ou norma coletiva de compensação; extrato do banco"
     se_vier: "Conferir forma (escrita, prazo de compensação) e prestação habitual de extras (Súmula 85, IV, TST)."
   cargo_confianca:
     rotulo: "Cargo de confiança (art. 62, II, CLT)"
-    pedidos: [horas_extras]
+    pedidos: [horas_extras, adicional_noturno, intervalo_intrajornada, intervalo_interjornada]
     documento_esperado: "Holerites com gratificação de função; procurações; organograma"
     se_vier: "Perguntas ao preposto sobre poderes reais de gestão; ônus é da reclamada."
   pagamento_deducao:
     rotulo: "Pagamento com dedução global"
-    pedidos: [horas_extras, verbas_rescisorias]
+    pedidos: [horas_extras, verbas_rescisorias, diferencas_salariais, comissoes, beneficio_normativo, fgts]
     documento_esperado: "Holerites e comprovantes"
     se_vier: "Apontar diferenças por amostragem; requerer dedução apenas do que foi pago sob o mesmo título."
   justa_causa:
     rotulo: "Dispensa por justa causa"
-    pedidos: [verbas_rescisorias]
+    pedidos: [verbas_rescisorias, reversao_justa_causa]
     documento_esperado: "Advertências, suspensões, comunicação da justa causa"
     se_vier: "Explorar imediatidade, gradação de penas e proporcionalidade; ônus da reclamada."
   pedido_demissao:
     rotulo: "Pedido de demissão"
-    pedidos: [verbas_rescisorias]
+    pedidos: [verbas_rescisorias, rescisao_indireta]
     documento_esperado: "Pedido de demissão escrito"
     se_vier: "Verificar vício de consentimento; ônus da reclamada (Súmula 212, TST)."
   abandono:
     rotulo: "Abandono de emprego"
-    pedidos: [verbas_rescisorias]
+    pedidos: [verbas_rescisorias, rescisao_indireta]
     documento_esperado: "Convocações formais (telegrama, AR)"
     se_vier: "Ônus da reclamada (Súmula 212, TST); exigir prova da convocação e do ânimo de abandonar."
   nega_prestacao:
@@ -59,11 +59,11 @@ teses:
     se_vier: "Ônus da reclamada. Conferir antes a suspensão nacional do tema no STF."
   epi_fornecido:
     rotulo: "EPI fornecido e eficaz"
-    pedidos: [insalubridade]
+    pedidos: [insalubridade, periculosidade, doenca_ocupacional]
     documento_esperado: "Ficha de EPI com número do CA; laudo/PGR"
     se_vier: "Conferir CA válido, periodicidade de troca e fiscalização do uso; quesitos ao perito."
   ausencia_prova_fato:
     rotulo: "Ausência de prova do fato e do nexo"
-    pedidos: [dano_moral, assedio_moral]
+    pedidos: [dano_moral, assedio_moral, dano_material, acumulo_desvio_funcao, rescisao_indireta, salario_por_fora, risco_psicossocial]
     documento_esperado: "Nenhum (negativa)"
     se_vier: "Ônus do reclamante: testemunha presencial e prova documental (mensagens, atestados)."

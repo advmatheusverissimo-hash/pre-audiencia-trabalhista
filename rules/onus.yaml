@@ -18,7 +18,7 @@
 # `onus`: reclamante | reclamada | pericia
 # `meio_prova`: documental | oral | pericial
 
-versao: "2026-10-20"
+versao: "2026-10-21"
 revisado_por: "pendente — Dr. Matheus Verissimo"
 
 regra_geral:
@@ -160,3 +160,156 @@ pedidos:
       fundamento: "NR-1 (GRO/PGR); art. 400, CPC"
       meio_prova: [documental, pericial]
       efeito: "Requerer exibição do PGR/inventário de riscos com a advertência do art. 400 do CPC."
+
+  # --- Catálogo ampliado (2026-10-21) — pendente de revisão do advogado ---
+
+  adicional_noturno:
+    rotulo: "Adicional noturno"
+    padrao:
+      onus: reclamante
+      fundamento: "Art. 73, CLT; art. 818, I, CLT"
+      meio_prova: [documental, oral]
+      efeito: "Reclamante prova o trabalho entre 22h e 5h; conferir hora noturna reduzida e prorrogação (Súmula 60, II, TST)."
+    variantes:
+      - quando: {controles_ponto: ausentes, reclamada_mais_de_20: true}
+        onus: reclamada
+        fundamento: "Súmula 338, I, TST; art. 74, §2º, CLT"
+        meio_prova: [documental]
+        efeito: "Sem controles, presume-se a jornada da inicial, inclusive o horário noturno; requerer juntada sob pena do art. 400 do CPC."
+      - quando: {controles_ponto: britanicos}
+        onus: reclamada
+        fundamento: "Súmula 338, III, TST"
+        meio_prova: [documental, oral]
+        efeito: "Registros invariáveis não servem de prova do horário noturno; ônus volta à reclamada."
+
+  intervalo_intrajornada:
+    rotulo: "Intervalo intrajornada"
+    padrao:
+      onus: reclamante
+      fundamento: "Art. 71, §4º, CLT; art. 74, §2º, CLT (pré-assinalação); art. 818, I, CLT"
+      meio_prova: [oral, documental]
+      efeito: "Com intervalo pré-assinalado, reclamante prova a supressão; testemunha sobre o tempo real de almoço."
+    variantes:
+      - quando: {controles_ponto: ausentes, reclamada_mais_de_20: true}
+        onus: reclamada
+        fundamento: "Súmula 338, I, TST — conferir aplicação ao intervalo no TRT"
+        meio_prova: [documental]
+        efeito: "Sem controles nem pré-assinalação, explorar a presunção da jornada da inicial."
+
+  intervalo_interjornada:
+    rotulo: "Intervalo interjornada"
+    padrao:
+      onus: reclamante
+      fundamento: "Art. 66, CLT; OJ 355, SDI-1, TST; art. 818, I, CLT"
+      meio_prova: [documental, oral]
+      efeito: "Cruzar os horários de saída e entrada dos cartões; menos de 11h entre jornadas."
+
+  domingos_feriados:
+    rotulo: "Domingos, feriados e folgas trabalhados (dobra)"
+    padrao:
+      onus: reclamante
+      fundamento: "Art. 9º, Lei 605/1949; Súmula 146, TST; art. 818, I, CLT"
+      meio_prova: [documental, oral]
+      efeito: "Reclamante prova o trabalho sem folga compensatória; conferir escala (6x1, 12x36) e norma coletiva."
+    variantes:
+      - quando: {controles_ponto: ausentes, reclamada_mais_de_20: true}
+        onus: reclamada
+        fundamento: "Súmula 338, I, TST"
+        meio_prova: [documental]
+        efeito: "Sem controles, presume-se a jornada e a escala da inicial."
+
+  rescisao_indireta:
+    rotulo: "Rescisão indireta"
+    padrao:
+      onus: reclamante
+      fundamento: "Art. 483, CLT; art. 818, I, CLT — falta grave do empregador é fato constitutivo"
+      meio_prova: [documental, oral]
+      efeito: "Reclamante prova a falta grave e a imediatidade; testemunha sobre os fatos do art. 483 alegados."
+
+  reversao_justa_causa:
+    rotulo: "Reversão da justa causa"
+    padrao:
+      onus: reclamada
+      fundamento: "Art. 818, II, CLT; art. 482, CLT; Súmula 212, TST"
+      meio_prova: [documental, oral]
+      efeito: "Reclamada prova a falta grave, a imediatidade e a proporcionalidade; explorar ausência de gradação de penas."
+
+  acumulo_desvio_funcao:
+    rotulo: "Acúmulo ou desvio de função"
+    padrao:
+      onus: reclamante
+      fundamento: "Art. 456, parágrafo único, CLT; OJ 125, SDI-1, TST; art. 818, I, CLT"
+      meio_prova: [oral, documental]
+      efeito: "Reclamante prova o exercício habitual de função alheia ao contrato; perguntas sobre quem fazia o quê e desde quando."
+
+  diferencas_salariais:
+    rotulo: "Diferenças salariais / salário ajustado ou suprimido"
+    padrao:
+      onus: reclamante
+      fundamento: "Art. 468, CLT; art. 818, I, CLT — o ajuste é fato constitutivo; o pagamento, fato extintivo"
+      meio_prova: [documental, oral]
+      efeito: "Reclamante prova o ajuste ou a redução; reclamada prova o pagamento por holerite."
+
+  salario_por_fora:
+    rotulo: "Salário pago por fora"
+    padrao:
+      onus: reclamante
+      fundamento: "Art. 818, I, CLT"
+      meio_prova: [oral, documental]
+      efeito: "Prova típica por extratos, mensagens e testemunha que também recebia por fora."
+
+  comissoes:
+    rotulo: "Comissões / diferenças de comissões"
+    padrao:
+      onus: reclamante
+      fundamento: "Art. 466, CLT; art. 818, I, CLT"
+      meio_prova: [documental, oral]
+      efeito: "Requerer exibição dos relatórios de vendas (art. 400, CPC); a reclamada prova a correção do pagamento."
+
+  beneficio_normativo:
+    rotulo: "Benefício de norma coletiva (vale-alimentação, PLR, cesta)"
+    padrao:
+      onus: reclamante
+      fundamento: "Art. 818, I, CLT; art. 611-A, CLT — juntar a norma coletiva aplicável"
+      meio_prova: [documental]
+      efeito: "Reclamante junta a norma; reclamada prova o pagamento ou a inaplicabilidade."
+
+  guias_seguro_desemprego:
+    rotulo: "Guias de FGTS e seguro-desemprego"
+    padrao:
+      onus: reclamada
+      fundamento: "Súmula 389, II, TST; art. 818, II, CLT — entrega das guias é fato extintivo"
+      meio_prova: [documental]
+      efeito: "Reclamada prova a entrega; sem prova, indenização substitutiva."
+
+  estabilidade_gestante:
+    rotulo: "Estabilidade da gestante"
+    padrao:
+      onus: reclamante
+      fundamento: "Art. 10, II, b, ADCT; Súmula 244, I, TST — independe da ciência do empregador"
+      meio_prova: [documental]
+      efeito: "Reclamante prova a gravidez na vigência do contrato (exame com data); reintegração ou indenização."
+
+  estabilidade_acidentaria:
+    rotulo: "Estabilidade acidentária"
+    padrao:
+      onus: reclamante
+      fundamento: "Art. 118, Lei 8.213/1991; Súmula 378, II, TST"
+      meio_prova: [documental, pericial]
+      efeito: "Afastamento superior a 15 dias com auxílio acidentário, ou doença com nexo constatada após a dispensa."
+
+  doenca_ocupacional:
+    rotulo: "Doença ocupacional / acidente de trabalho"
+    padrao:
+      onus: pericia
+      fundamento: "Art. 19-21, Lei 8.213/1991; art. 157, CLT; perícia médica para nexo"
+      meio_prova: [pericial, documental]
+      efeito: "Instrução técnica: quesitos ao perito médico, CAT, prontuários e PGR/PCMSO."
+
+  dano_material:
+    rotulo: "Dano material / pensão"
+    padrao:
+      onus: reclamante
+      fundamento: "Arts. 186, 927 e 950, CC; art. 818, I, CLT"
+      meio_prova: [documental, pericial]
+      efeito: "Reclamante prova o prejuízo e o nexo; em incapacidade, perícia define o percentual."
