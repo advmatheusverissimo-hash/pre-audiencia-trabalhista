@@ -48,6 +48,9 @@ fatores:
   prescricao_parcial:
     peso: -0.2
     texto: "Parte do período prescrita (quinquenal)"
+  revelia:
+    peso: 1.0
+    texto: "Revelia: confissão ficta da reclamada sobre a matéria de fato (art. 844, CLT) — peso a calibrar"
 
 # Situações que fixam a chance, independentemente dos fatores.
 fixos:

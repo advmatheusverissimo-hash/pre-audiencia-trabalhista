@@ -1,7 +1,8 @@
 # Como cada item do rol de pedidos vira um tipo de pedido, sem IA.
 # Vale o assunto que aparece PRIMEIRO no texto do item (ex.: "Reflexos das horas extras no FGTS"
 # é horas_extras). Expressões regulares, sem diferenciar maiúsculas.
-# tipo "acessorio": pedido que não tem prova de mérito (honorários, gratuidade, ofícios, juros).
+# tipo "acessorio": pedido que não tem prova de mérito (honorários, gratuidade, ofícios, juros,
+# tutela de urgência, responsabilidade de sócios ou de outras reclamadas).
 # tipo "outro": sem regra — advogado define.
 
 versao: "2026-10-21"
@@ -9,7 +10,7 @@ revisado_por: "pendente — Dr. Matheus Verissimo"
 
 regras:
   - tipo: acessorio
-    palavras: 'honor[áa]rios|justi[çc]a\s+gratuita|of[íi]cio|juros|corre[çc][ãa]o\s+monet|recolhimentos?\s+(?:previdenci|fiscais)|dedu[çc][ãa]o|compensa[çc][ãa]o\s+de\s+valores|provar\s+o\s+alegado|notifica[çc][ãa]o|cita[çc][ãa]o'
+    palavras: 'honor[áa]rios|justi[çc]a\s+gratuita|of[íi]cio|juros|corre[çc][ãa]o\s+monet|recolhimentos?\s+(?:previdenci|fiscais)|dedu[çc][ãa]o|compensa[çc][ãa]o\s+de\s+valores|provar\s+o\s+alegado|notifica[çc][ãa]o|cita[çc][ãa]o|tutela\s+(?:de\s+urg[êe]ncia|antecipada|cautelar|provis[óo]ria)|arresto|\bliminar|litiscons[óo]rcio|responsabilidade\s+(?:solid[áa]ria|subsidi[áa]ria)|desconsidera[çc][ãa]o\s+da\s+personalidade'
   - tipo: rescisao_indireta
     palavras: 'rescis[ãa]o\s+indireta|art(?:igo)?\.?\s*483'
   - tipo: reversao_justa_causa
