@@ -1,0 +1,87 @@
+# Verbas rescisórias — parâmetros da estimativa usada na calculadora de liquidação.
+# Mantido pelo advogado. O código só aplica o que está aqui; é ESTIMATIVA, no padrão do PJe-Calc,
+# e não substitui a conta homologada nem a norma coletiva da categoria (que pode melhorar as regras).
+#
+# Base legal de cada parâmetro no próprio item. Datas: o código conta meses de 30 dias (art. 64,
+# CLT) e aplica a "regra dos 15 dias" para a fração de mês (art. 146, parágrafo único, e art. 142,
+# CLT; Lei 4.090/62, art. 1º, §2º).
+
+versao: "2026-10-23"
+revisado_por: "pendente — Dr. Matheus Verissimo"
+situacao: a_conferir
+
+aviso_previo:
+  dias_base: 30             # art. 487, II, CLT; art. 7º, XXI, CF
+  dias_por_ano: 3           # Lei 12.506/2011, art. 1º, parágrafo único
+  dias_maximo: 90           # Lei 12.506/2011: 30 + até 60 dias
+  # O aviso indenizado projeta o contrato para todos os fins (OJ 82, SDI-1, TST; art. 487, §1º).
+  projeta_contrato: true
+
+fracao_de_mes:
+  dias_minimos: 15          # fração igual ou superior a 15 dias conta como mês inteiro
+
+ferias:
+  terco_constitucional: 0.3333  # art. 7º, XVII, CF
+  avos: 12                      # art. 130 e art. 146, CLT
+  # Férias vencidas não concedidas no prazo: em dobro (art. 137, CLT) — o advogado marca à mão.
+
+decimo_terceiro:
+  avos: 12                  # Lei 4.090/62; Lei 4.749/65
+
+fgts:
+  aliquota: 0.08            # art. 15, Lei 8.036/90
+  multa_rescisoria: 0.40    # art. 18, §1º, Lei 8.036/90 (dispensa sem justa causa)
+  multa_culpa_reciproca: 0.20  # art. 18, §2º, Lei 8.036/90
+
+multas:
+  art_477:
+    # Atraso no pagamento das verbas (10 dias do término do contrato): multa de um salário
+    # (art. 477, §§6º e 8º, CLT). Não se aplica se o empregado deu causa à mora.
+    prazo_dias: 10
+    valor: salario
+  art_467:
+    # Verbas rescisórias incontroversas não pagas na primeira audiência: acréscimo de 50% (art. 467, CLT).
+    percentual: 0.5
+
+# Modalidades: o que entra em cada uma. "sim" = devido; "nao" = não devido.
+modalidades:
+  sem_justa_causa:
+    rotulo: "Dispensa sem justa causa"
+    aviso_previo: sim
+    decimo_terceiro: sim
+    ferias_proporcionais: sim
+    multa_fgts: 0.40
+    saque_fgts: sim
+    seguro_desemprego: sim
+  pedido_demissao:
+    rotulo: "Pedido de demissão"
+    aviso_previo: nao          # o empregado é quem deve o aviso (art. 487, §2º)
+    decimo_terceiro: sim
+    ferias_proporcionais: sim  # Súmula 261, TST
+    multa_fgts: 0
+    saque_fgts: nao
+    seguro_desemprego: nao
+  justa_causa:
+    rotulo: "Dispensa por justa causa"
+    aviso_previo: nao
+    decimo_terceiro: nao       # art. 3º, Lei 4.090/62 (só o proporcional é perdido)
+    ferias_proporcionais: nao  # art. 146, parágrafo único, CLT
+    multa_fgts: 0
+    saque_fgts: nao
+    seguro_desemprego: nao
+  rescisao_indireta:
+    rotulo: "Rescisão indireta (art. 483, CLT)"
+    aviso_previo: sim
+    decimo_terceiro: sim
+    ferias_proporcionais: sim
+    multa_fgts: 0.40
+    saque_fgts: sim
+    seguro_desemprego: sim
+  acordo_484a:
+    rotulo: "Acordo entre as partes (art. 484-A, CLT)"
+    aviso_previo: metade       # metade do aviso indenizado
+    decimo_terceiro: sim
+    ferias_proporcionais: sim
+    multa_fgts: 0.20
+    saque_fgts: parcial        # até 80% (art. 484-A, §1º)
+    seguro_desemprego: nao
