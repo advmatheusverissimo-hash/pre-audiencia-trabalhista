@@ -70,3 +70,7 @@ matriz:
 # Sem correção, juros e tempo até o pagamento nesta versão (fase seguinte).
 acordo:
   honorarios_sucumbencia: 0.10   # art. 791-A, CLT (5% a 15%); só informativo no custo de perder
+
+# Pedidos declaratórios ou de obrigação de fazer: quando a inicial não dá valor, não recebem parte
+# da sobra do valor da causa (o efeito em dinheiro está nas verbas que deles decorrem).
+sem_valor_proprio: [rescisao_indireta, vinculo_emprego, reversao_justa_causa]
