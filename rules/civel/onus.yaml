@@ -1,0 +1,95 @@
+# Ônus da prova por pedido — CÍVEL (consumo e responsabilidade civil, TJSP: Juizado e vara cível).
+#
+# Mantido pelo advogado. Mesmo formato de rules/onus.yaml: o sistema NUNCA cria regra fora daqui;
+# pedido sem regra sai como "sem regra — advogado define".
+# `onus` usa os mesmos valores do trabalhista: reclamante = AUTOR; reclamada = RÉU; pericia.
+# Toda jurisprudência citada aqui está marcada "conferir" até ser verificada em fonte oficial.
+#
+# Premissa do pacote: relação de consumo (CDC). Se não houver, vale só o art. 373 do CPC, sem
+# inversão: o "efeito" de cada pedido diz o que muda.
+
+versao: "2026-11-12"
+revisado_por: "pendente — Dr. Matheus Verissimo"
+situacao: a_conferir
+
+regra_geral:
+  fundamento: "Art. 373, I e II, e §1º, CPC; art. 6º, VIII, CDC"
+  texto: >-
+    Autor prova o fato constitutivo; réu, o fato impeditivo, modificativo ou extintivo. Na relação
+    de consumo, o juiz pode inverter o ônus quando a alegação for verossímil ou o consumidor
+    hipossuficiente (art. 6º, VIII, CDC); no fato do serviço, cabe ao fornecedor provar as
+    excludentes (art. 14, §3º, CDC).
+  efeito: "Requerer a inversão do ônus na inicial ou antes do saneamento (art. 357, III, CPC) e pedir que conste da decisão de saneamento."
+
+pedidos:
+  civel_dano_moral:
+    rotulo: "Dano moral"
+    padrao:
+      onus: reclamante
+      fundamento: "Art. 373, I, CPC; arts. 186 e 927, CC; art. 14, CDC (responsabilidade objetiva do fornecedor)"
+      meio_prova: [documental, oral]
+      efeito: "Autor prova o fato e a repercussão. Na inscrição indevida em cadastro de inadimplentes o dano costuma ser presumido (jurisprudência do STJ — conferir); a Súmula 385/STJ afasta a indenização se houver inscrição legítima anterior: juntar ou pedir o extrato do SCPC/Serasa."
+
+  civel_dano_material:
+    rotulo: "Dano material / ressarcimento"
+    padrao:
+      onus: reclamante
+      fundamento: "Art. 373, I, CPC; arts. 402 e 403, CC"
+      meio_prova: [documental]
+      efeito: "Dano material não se presume: um comprovante para cada valor (nota, recibo, extrato). Sem documento, o pedido tende a ser rejeitado ou reduzido."
+
+  civel_inexigibilidade_debito:
+    rotulo: "Inexigibilidade / inexistência de débito"
+    padrao:
+      onus: reclamada
+      fundamento: "Art. 373, II, CPC; arts. 6º, VIII, e 14, CDC — o autor não prova fato negativo (não contratou)"
+      meio_prova: [documental, pericial]
+      efeito: "Cabe ao réu provar a contratação e a origem do débito: exigir contrato assinado, gravação ou prova de uso. Impugnar a assinatura e, se preciso, pedir perícia grafotécnica (ônus de quem produziu o documento — art. 429, II, CPC)."
+
+  civel_repeticao_indebito:
+    rotulo: "Repetição do indébito (devolução em dobro)"
+    padrao:
+      onus: reclamante
+      fundamento: "Art. 373, I, CPC; art. 42, parágrafo único, CDC"
+      meio_prova: [documental]
+      efeito: "Autor prova a cobrança e o pagamento indevidos (faturas, extratos). Devolução em dobro: o STJ dispensa a prova de má-fé quando a cobrança contraria a boa-fé objetiva, com modulação para cobranças a partir de 30/03/2021 (EAREsp 676.608 — conferir); o réu pode alegar engano justificável."
+
+  civel_obrigacao_fazer:
+    rotulo: "Obrigação de fazer (exclusão de negativação, cancelamento, entrega)"
+    padrao:
+      onus: reclamante
+      fundamento: "Art. 373, I, CPC; arts. 497 e 536, CPC"
+      meio_prova: [documental]
+      efeito: "Provar a obrigação e o descumprimento. Pedir tutela de urgência (art. 300, CPC) e multa diária com teto (art. 537, CPC); conferir o cumprimento antes da audiência."
+
+  civel_restituicao_fraude:
+    rotulo: "Restituição por fraude bancária / golpe / PIX não reconhecido"
+    padrao:
+      onus: reclamada
+      fundamento: "Art. 14, caput e §3º, CDC; Súmula 479/STJ (fortuito interno — conferir)"
+      meio_prova: [documental, oral]
+      efeito: "O banco responde objetivamente por fraude de terceiro ligada à sua atividade e prova a culpa exclusiva do consumidor ou de terceiro. Pedir ao banco os registros da operação (dispositivo, IP, autenticação, perfil de uso) e se acionou o mecanismo de devolução do Pix (regulamento do Banco Central — conferir). A principal defesa é a culpa da vítima (entregou senha ou código): preparar a narrativa e o boletim de ocorrência."
+
+  civel_lucros_cessantes:
+    rotulo: "Lucros cessantes"
+    padrao:
+      onus: reclamante
+      fundamento: "Art. 373, I, CPC; art. 402, CC"
+      meio_prova: [documental, pericial]
+      efeito: "Provar o que razoavelmente deixou de ganhar (declarações, notas, movimento anterior). Expectativa sem prova é rejeitada."
+
+  civel_rescisao_contrato:
+    rotulo: "Rescisão / resolução do contrato"
+    padrao:
+      onus: reclamante
+      fundamento: "Art. 373, I, CPC; art. 475, CC"
+      meio_prova: [documental]
+      efeito: "Provar o contrato e o inadimplemento da outra parte. Cláusulas abusivas em relação de consumo: art. 51, CDC."
+
+  civel_vicio_produto:
+    rotulo: "Vício do produto ou do serviço"
+    padrao:
+      onus: pericia
+      fundamento: "Arts. 18 e 20, CDC; art. 6º, VIII, CDC"
+      meio_prova: [pericial, documental]
+      efeito: "Vício técnico em geral pede perícia: quesitos sobre a origem do defeito e o uso. Atenção à decadência do art. 26, CDC (30 ou 90 dias) e às reclamações registradas, que a obstam."

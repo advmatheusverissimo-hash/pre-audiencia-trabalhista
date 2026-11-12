@@ -1,0 +1,75 @@
+# Prescrição, decadência e rito — CÍVEL (consumo e responsabilidade civil, TJSP).
+# Mantido pelo advogado. O sistema só mostra o que está aqui; o termo inicial (data do fato ou da
+# ciência do dano) quem confere é o advogado. Jurisprudência marcada "conferir" até verificação.
+
+versao: "2026-11-12"
+revisado_por: "pendente — Dr. Matheus Verissimo"
+situacao: a_conferir
+
+prescricao:
+  civel_dano_moral:
+    texto: "5 anos do conhecimento do dano e da autoria, se fato do produto ou do serviço (art. 27, CDC); fora da relação de consumo, 3 anos (art. 206, §3º, V, CC)."
+  civel_dano_material:
+    texto: "5 anos (art. 27, CDC) no fato do serviço; 3 anos (art. 206, §3º, V, CC) na reparação civil comum; 10 anos (art. 205, CC) se decorrer de inadimplemento contratual (STJ — conferir)."
+  civel_inexigibilidade_debito:
+    texto: "Declaratória pura não prescreve (conferir); os pedidos de condenação ligados a ela seguem o prazo próprio."
+  civel_repeticao_indebito:
+    texto: "10 anos (art. 205, CC) segundo o STJ para a repetição em relação contratual ou de consumo (conferir); contar de cada pagamento indevido."
+  civel_obrigacao_fazer:
+    texto: "Em regra 10 anos (art. 205, CC); se a obrigação decorrer de relação de consumo com fato do serviço, conferir o art. 27, CDC."
+  civel_restituicao_fraude:
+    texto: "5 anos do conhecimento do dano e da autoria (art. 27, CDC — fato do serviço bancário)."
+  civel_lucros_cessantes:
+    texto: "Segue o prazo do dano principal: 5 anos (art. 27, CDC) ou 3 anos (art. 206, §3º, V, CC)."
+  civel_rescisao_contrato:
+    texto: "10 anos (art. 205, CC) para pretensões de inadimplemento contratual (STJ — conferir)."
+  civel_vicio_produto:
+    texto: "DECADÊNCIA de 30 dias (não duráveis) ou 90 dias (duráveis) da entrega ou da evidência do vício oculto (art. 26, CDC); obstada por reclamação comprovada até a resposta negativa (art. 26, §2º)."
+
+# Rito. Juizado = "sumarissimo" no sistema; vara cível = "ordinario" (procedimento comum).
+rito:
+  juizado:
+    rotulo: "Juizado Especial Cível (Lei 9.099/95)"
+    lembretes:
+      - "Valor até 40 salários mínimos (art. 3º, I); até 20, a parte pode estar sem advogado (art. 9º)."
+      - "Ausência do autor em qualquer audiência extingue o processo, com custas (art. 51, I, e §2º); ausência do réu gera revelia (art. 20)."
+      - "Contestação e provas na audiência de instrução; até 3 testemunhas por parte, que comparecem independentemente de intimação ou a pedido 5 dias antes (art. 34)."
+      - "Recurso inominado em 10 dias úteis (art. 42; prazos em dias úteis — art. 12-A), com preparo em 48 horas seguintes à interposição (art. 42, §1º). Sem custas no 1º grau (art. 54)."
+      - "Pessoa jurídica ré pode ser representada por preposto credenciado com carta de preposição (art. 9º, §4º)."
+  comum:
+    rotulo: "Procedimento comum (vara cível)"
+    lembretes:
+      - "Audiência de conciliação ou mediação do art. 334, CPC: ausência injustificada é ato atentatório, com multa de até 2% do valor da causa ou da vantagem pretendida (art. 334, §8º)."
+      - "Contestação em 15 dias úteis, contados da audiência do art. 334 ou do protocolo do pedido de cancelamento (art. 335, CPC)."
+      - "Rol de testemunhas no prazo fixado pelo juiz, até 15 dias após o saneamento (art. 357, §4º); até 10 testemunhas, 3 por fato (art. 357, §6º). A intimação é feita pelo próprio advogado (art. 455)."
+      - "Apelação em 15 dias úteis (art. 1.003, §5º, CPC), com preparo (Lei estadual 11.608/2003 — conferir a taxa vigente na tabela do TJSP)."
+
+# Prazos e audiências entre 20/12 e 20/01 (art. 220, CPC): prazos suspensos e sem audiências.
+recesso:
+  base: "Art. 220, caput e §2º, CPC"
+
+# Instrução no cível: substitui, no parecer cível, o que rules/instrucao.yaml traz para a CLT.
+instrucao:
+  limite_testemunhas:
+    sumarissimo: {quantidade: 3, fundamento: "Art. 34, Lei 9.099/95"}
+    ordinario: {quantidade: 10, fundamento: "Art. 357, §6º, CPC (até 3 por fato)"}
+  preposto: >-
+    Réu pessoa jurídica: preposto com carta de preposição e poderes para transigir (art. 334, §10,
+    CPC; no Juizado, art. 9º, §4º, Lei 9.099/95). Depoimento pessoal da parte contrária só se
+    requerido (art. 385, CPC); a recusa ou o "não sei" gera confissão (art. 385, §1º, e 386, CPC).
+  contradita:
+    gatilhos:
+      - "Incapaz, impedido ou suspeito (art. 447, CPC): cônjuge, companheiro, parente até o 3º grau; amigo íntimo ou inimigo; interessado no litígio."
+      - "A contradita é feita depois da qualificação e antes do compromisso (art. 457, §1º, CPC); a parte pode provar o fato com documentos ou até 3 testemunhas."
+    perguntas_qualificacao:
+      - "Qual a sua relação com as partes? Trabalha ou já trabalhou para alguma delas?"
+      - "Tem interesse no resultado ou processo semelhante contra a mesma empresa?"
+    resposta: >-
+      Se a testemunha for ouvida mesmo impedida ou suspeita, pedir que seja ouvida como informante,
+      sem compromisso (art. 447, §§4º e 5º, CPC), e que a ressalva conste do termo.
+  protestos:
+    - quando: "Juiz indefere prova ou pergunta"
+      texto: "Pedir o registro em ata: na vara cível, a decisão não agravável é impugnada em preliminar de apelação ou nas contrarrazões (art. 1.009, §1º, CPC)."
+    - quando: "Juizado"
+      texto: "Decisões interlocutórias são irrecorríveis: registrar o inconformismo em ata e levá-lo ao recurso inominado (art. 41, Lei 9.099/95)."
+  lembrete_protestos: "Nulidade é alegada na primeira oportunidade de falar nos autos, sob pena de preclusão (art. 278, CPC)."

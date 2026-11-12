@@ -1,0 +1,28 @@
+# Como cada item do rol de pedidos vira um tipo de pedido — CÍVEL (consumo e responsabilidade civil).
+# Mesmo critério do trabalhista: vale o assunto que aparece PRIMEIRO no texto do item.
+# Expressões regulares, sem diferenciar maiúsculas. "outro" = sem regra — advogado define.
+
+versao: "2026-11-12"
+revisado_por: "pendente — Dr. Matheus Verissimo"
+
+regras:
+  - tipo: acessorio
+    palavras: 'honor[áa]rios|justi[çc]a\s+gratuita|gratuidade|cita[çc][ãa]o|intima[çc][ãa]o|juros|corre[çc][ãa]o\s+monet|invers[ãa]o\s+do\s+[ôo]nus|produ[çc][ãa]o\s+de\s+(?:todas\s+as\s+)?provas|provar\s+o\s+alegado|tutela\s+(?:de\s+urg[êe]ncia|antecipada|provis[óo]ria)|\bliminar|audi[êe]ncia\s+de\s+concilia[çc][ãa]o|ju[íi]zo\s+100%\s+digital|condena[çc][ãa]o\s+(?:da|do|das|dos)\s+r[ée]u?s?\s+(?:ao|nas?)\s+(?:pagamento\s+das?\s+)?custas'
+  - tipo: civel_restituicao_fraude
+    palavras: 'golpe|fraude|\bpix\b[^.]{0,60}n[ãa]o\s+reconhecid|transfer[êe]ncias?\s+n[ãa]o\s+(?:reconhecid|autorizad)|(?:restitui[çc][ãa]o|devolu[çc][ãa]o|estorno)\s+d[oa]s?\s+(?:valor(?:es)?|quantias?|import[âa]ncias?)\s+(?:transferid|subtra[íi]d|desviad|debitad)'
+  - tipo: civel_inexigibilidade_debito
+    palavras: 'inexig[íi]bilidade|inexist[êe]ncia\s+d[eoa]\s+(?:d[ée]bito|d[íi]vida|rela[çc][ãa]o\s+jur[íi]dica|contrat|neg[óo]cio)|nulidade\s+d[oa]\s+(?:contrato|d[ée]bito|cobran[çc]a)'
+  - tipo: civel_repeticao_indebito
+    palavras: 'repeti[çc][ãa]o\s+(?:do\s+)?ind[ée]bito|em\s+dobro|art(?:igo)?\.?\s*42,?\s*par[áa]grafo'
+  - tipo: civel_lucros_cessantes
+    palavras: 'lucros?\s+cessantes?'
+  - tipo: civel_dano_moral
+    palavras: 'danos?\s+mora(?:l|is)|abalo\s+moral'
+  - tipo: civel_dano_material
+    palavras: 'danos?\s+materia(?:l|is)|danos?\s+emergentes?|ressarcimento|reembolso|restitui[çc][ãa]o'
+  - tipo: civel_obrigacao_fazer
+    palavras: 'exclus[ãa]o\s+d[oea]s?\s+(?:nome|apontamento|registro|inscri)|baixa\s+d[aeo]s?\s+(?:negativa|restri|protesto|apontamento)|cancelamento\s+d[oae]s?|obriga[çc][ãa]o\s+de\s+(?:fazer|n[ãa]o\s+fazer)|absten(?:ha|[çc][ãa]o)'
+  - tipo: civel_rescisao_contrato
+    palavras: 'rescis[ãa]o\s+d[oa]\s+contrato|resolu[çc][ãa]o\s+d[oa]\s+contrato|resili[çc][ãa]o'
+  - tipo: civel_vicio_produto
+    palavras: 'v[íi]cio\s+d[oe]\s+(?:produto|servi[çc]o)|substitui[çc][ãa]o\s+do\s+produto|abatimento\s+proporcional|produto\s+defeituoso'
