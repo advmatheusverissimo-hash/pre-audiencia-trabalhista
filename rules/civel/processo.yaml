@@ -73,3 +73,36 @@ instrucao:
     - quando: "Juizado"
       texto: "Decisões interlocutórias são irrecorríveis: registrar o inconformismo em ata e levá-lo ao recurso inominado (art. 41, Lei 9.099/95)."
   lembrete_protestos: "Nulidade é alegada na primeira oportunidade de falar nos autos, sob pena de preclusão (art. 278, CPC)."
+
+# Honorários de sucumbência usados na estimativa do acordo (custo esperado se perder o pedido).
+# Juizado: sem honorários no 1º grau (art. 55, Lei 9.099/95). Comum: mínimo de 10% (art. 85, §2º, CPC).
+honorarios_sucumbencia:
+  sumarissimo: 0
+  ordinario: 0.10
+
+# Pontos do cível que o parecer lembra quando o caso tem o pedido (ou o lado) indicado.
+pontos:
+  - quando_pedido: civel_dano_moral
+    titulo: "Dano moral: juros e correção"
+    texto: "Correção desde o arbitramento (Súmula 362/STJ); juros desde o evento danoso na responsabilidade extracontratual (Súmula 54/STJ) ou desde a citação na contratual (art. 405, CC). Conferir o que a sentença fixar."
+  - quando_pedido: civel_inexigibilidade_debito
+    titulo: "Contratação negada"
+    texto: "Se o réu juntar contrato e a assinatura for impugnada, o ônus de provar a autenticidade é de quem produziu o documento (art. 429, II, CPC; Tema 1.061/STJ — conferir). No Juizado, perícia grafotécnica pode levar à extinção por complexidade (art. 3º e art. 51, II, Lei 9.099/95)."
+  - quando_pedido: civel_restituicao_fraude
+    titulo: "Fraude bancária: o que pedir já"
+    texto: "Boletim de ocorrência, protocolo de contestação junto ao banco, extratos do dia e pedido de exibição dos registros da operação (art. 396, CPC); sem resposta, presunção do art. 400, CPC."
+  - quando_lado: reclamada
+    titulo: "Defesa do réu (cível)"
+    texto: "Preliminares do art. 337, CPC (inclusive incorreção do valor da causa e da gratuidade); denunciação da lide é vedada na relação de consumo (art. 88, CDC); no Juizado, pedido contraposto (art. 31, Lei 9.099/95) e não reconvenção; na vara cível, reconvenção na própria contestação (art. 343, CPC). Contestação genérica faz presumir verdadeiros os fatos não impugnados (art. 341, CPC)."
+  - quando_lado: reclamante
+    titulo: "Autor: audiência e provas"
+    texto: "Na vara cível, dizer na inicial se há interesse na audiência do art. 334 (art. 319, VII, CPC). No Juizado, a ausência do autor extingue o processo com custas (art. 51, I, e §2º, Lei 9.099/95): confirmar presença e meios de acesso se a audiência for virtual."
+
+# Inversão do ônus: o parecer avisa se a relação é de consumo e a inversão não foi pedida.
+inversao_onus:
+  pedidos_de_consumo: [civel_dano_moral, civel_inexigibilidade_debito, civel_repeticao_indebito, civel_restituicao_fraude, civel_vicio_produto]
+  palavras_pedido: 'invers[ãa]o\s+do\s+[ôo]nus'
+  texto: "Relação de consumo sem pedido de inversão do ônus da prova (art. 6º, VIII, CDC) no rol: requerer antes do saneamento e pedir que conste da decisão (art. 357, III, CPC)."
+
+# Revelia no cível (substitui o texto da CLT no alerta).
+revelia: "Revelia: presumem-se verdadeiros os fatos alegados pelo autor (art. 344, CPC; no Juizado, art. 20, Lei 9.099/95), salvo nas hipóteses do art. 345, CPC. Perícia continua possível se o juiz entender necessária."
